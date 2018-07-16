@@ -1,0 +1,24 @@
+{
+  "name": "portfoliov2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidfunk13/portfoliov2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidfunk13/portfoliov2/issues"
+  },
+  "homepage": "https://github.com/davidfunk13/portfoliov2#readme"
+}
