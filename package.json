@@ -5,18 +5,20 @@
   "main": "server.js",
   "scripts": {
     "sass": "node-sass sass/main.scss public/css/style.css -w",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"nodemon server.js\" \"npm run sass\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
-    "express-handlebars": "^2.0.1",
-    "mysql": "^2.10.2"
+    "express-handlebars": "^2.0.1"
   },
   "devDependencies": {
+    "concurrently": "^3.6.0",
     "handlebars-helper-css": "^0.1.0",
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.2",
+    "nodemon": "^1.18.2"
   }
 }
