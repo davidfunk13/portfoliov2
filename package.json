@@ -1,24 +1,22 @@
 {
-  "name": "portfoliov2",
+  "name": "dave_portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "dependencies": {
-    "express": "^4.16.3"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/davidfunk13/portfoliov2.git"
+    "sass": "node-sass sass/main.scss public/css/style.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/davidfunk13/portfoliov2/issues"
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+    "mysql": "^2.10.2"
   },
-  "homepage": "https://github.com/davidfunk13/portfoliov2#readme"
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0",
+    "node-sass": "^4.9.0"
+  }
 }

@@ -1,15 +1,34 @@
-const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 3000;
+var express = require("express");
+var bodyParser = require("body-parser");
 
+var PORT = process.env.PORT || 3000;
 
+var app = express();
 
-app.use(express.static("client/build"));
-require("./routes.js")(app);
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
 
-app.listen(PORT, err => {
-  if (err) {
-    throw err;
-  }
-  console.log(`Portfolio v2 webserver listening on port ${PORT}`);
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+// parse application/json
+app.use(bodyParser.json());
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({
+  defaultLayout: "main"
+}));
+app.set("view engine", "handlebars");
+
+// Import routes and give the server access to them.
+var routes = require("./controllers/appController.js");
+
+app.use(routes);
+
+app.listen(PORT, function () {
+  console.log(`Portfolio webserver now listening at port ${PORT}`);
 });
