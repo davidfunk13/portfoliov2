@@ -1,0 +1,8 @@
+.center {
+    width: 33%;
+    height: 100vh;
+    animation: moveInBottom 1s;
+    animation-delay: .25s;
+    background-color: gray;
+    animation-fill-mode: backwards;
+}
