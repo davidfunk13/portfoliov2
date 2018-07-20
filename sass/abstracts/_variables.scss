@@ -1,12 +1,9 @@
-//colors
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark:#28b485;
-
-$color-grey-light-1: #f7f7f7;
-$color-grey-dark: #777;
-$color-white: #fff;
-$color-black: #000;
+/* RGB */
+$color1: rgba(10, 18, 42, 1);
+$color2: rgba(144, 156, 194, 1);
+$color3: rgba(84, 94, 117, 1);
+$color4: rgba(0, 1, 0, 1);
+$color5: rgba(245, 138, 7, 1);
 
 //grid
 $grid-width: 114rem;
@@ -15,3 +12,9 @@ $gutter-horizontal: 6rem;
 
 //fontsize
 $default-font-size: 1.6rem;
+
+//parallax
+$parallax-offset: 30vh;
+$content-offset: 40vh;
+$transition-speed: 1.2s;
+$slide-number: 3;

@@ -1,12 +1,28 @@
-.u-center-text{
+.u-center-text {
     text-align: center;
 }
+
 .u-margin-bottom-small {
     margin-bottom: 1.5rem;
 }
+
 .u-margin-bottom-medium {
     margin-bottom: 4rem;
 }
+
 .u-margin-bottom-big {
     margin-bottom: 8rem;
+}
+
+.background.up-scroll {
+    transform: translate3d(0, -$parallax-offset / 2, 0);
+    .content-wrapper {
+        transform: translateY($parallax-offset / 2);
+    }
+    +.background {
+        transform: translate3d(0, $parallax-offset, 0);
+        .content-wrapper {
+            transform: translateY($parallax-offset);
+        }
+    }
 }

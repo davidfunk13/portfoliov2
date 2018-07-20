@@ -5,3 +5,6 @@
         clear: both;
     }
 }
+@mixin transition($time, $property: all, $easing: ease-in) {
+    transition: $property $time $easing;
+}
