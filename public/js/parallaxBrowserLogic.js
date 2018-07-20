@@ -49,10 +49,16 @@ window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
 
 function nextItem() {
   var $previousSlide = $(".background").eq(currentSlideNumber - 1);
+let nextSlide = $('.heading-primary').eq(currentSlideNumber)
   $previousSlide.removeClass("up-scroll").addClass("down-scroll");
+ console.log(nextSlide)
+ nextSlide.addClass('moveInBottom')
 }
 
 function previousItem() {
+  let nextSlide = $('.heading-primary').eq(currentSlideNumber)
+console.log(nextSlide)
   var $currentSlide = $(".background").eq(currentSlideNumber);
   $currentSlide.removeClass("down-scroll").addClass("up-scroll");
+  nextSlide.addClass('moveInBottom')
 }

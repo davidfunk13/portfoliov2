@@ -33,3 +33,14 @@
         transform: translateY(0)
     }
 }
+@keyframes come-in {
+    to { transform: translateY(0); }
+  }
+
+  .moveInBottom {
+    animation-name: moveInBottom;
+    animation-duration: 1s;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-out;
+  }
