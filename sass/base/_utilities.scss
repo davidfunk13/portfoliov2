@@ -20,27 +20,3 @@
   padding-left: 2rem;
   padding-right: 2rem;
 }
-
-.background.up-scroll {
-  transform: translate3d(0, -$parallax-offset / 2, 0);
-  .content-wrapper {
-    transform: translateY($parallax-offset / 2);
-  }
-  + .background {
-    transform: translate3d(0, $parallax-offset, 0);
-    .content-wrapper {
-      transform: translateY($parallax-offset);
-    }
-  }
-}
-// .come-in {
-//   transform: translateY(150px);
-//   animation: come-in 0.8s ease forwards;
-// }
-// .come-in:nth-child(odd) {
-//   animation-duration: 0.6s;
-// }
-// .already-visible {
-//   transform: translateY(0);
-//   animation: none;
-// }

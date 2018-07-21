@@ -24,20 +24,20 @@
     background-color: rgba(0,0,0,.3);
   }
   &:first-child {
-    background-color: white;
+    background-color: rgb(32, 65, 142);
     transform: translateY(-$parallax-offset / 2);
     .content-wrapper {
       transform: translateY($parallax-offset /2);
     }
   }
   &:nth-child(2) {
-    background-color: green;
+    background-color: rgb(39, 41, 50);
   }
   &:nth-child(3) {
-    background-color: blue;
+    background-color: rgb(245, 143, 41);
   }
   &:nth-child(4) {
-    background-color: red;
+    background-color: rgb(130, 132, 137);
   }
 }
 
@@ -72,5 +72,18 @@
       .content-wrapper {
         transform: translateY($parallax-offset / 2);
       }
+  }
+}
+
+.background.up-scroll {
+  transform: translate3d(0, -$parallax-offset / 2, 0);
+  .content-wrapper {
+    transform: translateY($parallax-offset / 2);
+  }
+  + .background {
+    transform: translate3d(0, $parallax-offset, 0);
+    .content-wrapper {
+      transform: translateY($parallax-offset);
+    }
   }
 }
