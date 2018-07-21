@@ -72,8 +72,18 @@ body {
 
 .heading-secondary {
   text-align: center;
-  font-size: 1vh;
+  font-size: 2rem;
   line-height: 1.4;
+  color: #fff;
+  font-family: Montserrat;
+  text-transform: uppercase;
+  letter-spacing: .2rem; }
+
+.heading-tertiary {
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  letter-spacing: .1rem;
   color: #fff;
   font-family: Montserrat;
   text-transform: uppercase; }
@@ -88,6 +98,15 @@ body {
   margin-bottom: 4rem; }
 
 .u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.u-margin-top-small {
+  margin-top: 1.5rem; }
+
+.u-margin-top-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-top-big {
   margin-bottom: 8rem; }
 
 .text-box-border {

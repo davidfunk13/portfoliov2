@@ -52,9 +52,13 @@ function nextItem() {
   let $previousSlide = $(".background").eq(currentSlideNumber - 1);
   let $currentHeading = $(".heading-primary").eq(currentSlideNumber);
   let $previousHeading = $(".heading-primary").eq(currentSlideNumber - 1);
+  let $icon = $(".icon")
   $previousSlide.removeClass("up-scroll").addClass("down-scroll");
   $currentHeading.addClass('moveInBottom').removeClass('moveInTop');
-  setTimeout(function(){
+  if (currentSlideNumber === 1) {
+    $icon.addClass('moveInBottom').removeClass('moveInTop')
+  }
+  setTimeout(function () {
     $previousHeading.removeClass('moveInTop')
     $currentHeading.removeClass('moveInBottom')
     $currentHeading.removeClass('moveInTop')
@@ -64,11 +68,14 @@ function nextItem() {
 function previousItem() {
   let $currentHeading = $(".heading-primary").eq(currentSlideNumber);
   let $currentSlide = $(".background").eq(currentSlideNumber);
+  let $icon = $(".icon")
+  if(currentSlideNumber===1) {
+    $icon.removeClass('moveInBottom').addClass('moveInTop')
+  }
   $currentSlide.removeClass("down-scroll").addClass("up-scroll")
   $currentHeading.addClass('moveInTop')
-  setTimeout(function(){
+  setTimeout(function () {
     $currentHeading.removeClass('moveInTop');
     $currentHeading.removeClass('moveInBottom')
-
-  },1300)
+  }, 1300)
 }
