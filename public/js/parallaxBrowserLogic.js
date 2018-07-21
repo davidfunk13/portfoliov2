@@ -1,10 +1,11 @@
-var ticking = false;
-var isFirefox = (/Firefox/i.test(navigator.userAgent));
-var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
-var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
-var slideDurationSetting = 600; //Amount of time for which slide is "locked"
-var currentSlideNumber = 0;
-var totalSlideNumber = $(".background").length;
+let ticking = false;
+let isFirefox = (/Firefox/i.test(navigator.userAgent));
+let isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
+let scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
+let slideDurationSetting = 1500; //Amount of time for which slide is "locked"
+let currentSlideNumber = 0;
+let totalSlideNumber = $(".background").length;
+
 
 function parallaxScroll(evt) {
   if (isFirefox) {
@@ -30,35 +31,44 @@ function parallaxScroll(evt) {
       ticking = true;
       if (currentSlideNumber !== 0) {
         currentSlideNumber--;
+        previousItem();
       }
-      previousItem();
       slideDurationTimeout(slideDurationSetting);
     }
   }
 }
 
 function slideDurationTimeout(slideDuration) {
-  setTimeout(function() {
+  setTimeout(function () {
     ticking = false;
   }, slideDuration);
 }
 
-var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+let mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
+window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), { passive: true });
 
 
 function nextItem() {
-  var $previousSlide = $(".background").eq(currentSlideNumber - 1);
-let nextSlide = $('.heading-primary').eq(currentSlideNumber)
+  let $previousSlide = $(".background").eq(currentSlideNumber - 1);
+  let $currentHeading = $(".heading-primary").eq(currentSlideNumber);
+  let $previousHeading = $(".heading-primary").eq(currentSlideNumber - 1);
   $previousSlide.removeClass("up-scroll").addClass("down-scroll");
- console.log(nextSlide)
- nextSlide.addClass('moveInBottom')
+  $currentHeading.addClass('moveInBottom').removeClass('moveInTop');
+  setTimeout(function(){
+    $previousHeading.removeClass('moveInTop')
+    $currentHeading.removeClass('moveInBottom')
+    $currentHeading.removeClass('moveInTop')
+  }, 1300)
 }
 
 function previousItem() {
-  let nextSlide = $('.heading-primary').eq(currentSlideNumber)
-console.log(nextSlide)
-  var $currentSlide = $(".background").eq(currentSlideNumber);
-  $currentSlide.removeClass("down-scroll").addClass("up-scroll");
-  nextSlide.addClass('moveInBottom')
+  let $currentHeading = $(".heading-primary").eq(currentSlideNumber);
+  let $currentSlide = $(".background").eq(currentSlideNumber);
+  $currentSlide.removeClass("down-scroll").addClass("up-scroll")
+  $currentHeading.addClass('moveInTop')
+  setTimeout(function(){
+    $currentHeading.removeClass('moveInTop');
+    $currentHeading.removeClass('moveInBottom')
+
+  },1300)
 }

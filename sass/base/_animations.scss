@@ -24,10 +24,24 @@
         opacity: 0;
         transform: translateY(500%)
     }
-    65% {
-        opacity: .5;
-        transform: translateY(250%)
+    // 65% {
+    //     opacity: .5;
+    //     transform: translateY(250%)
+    // }
+    100% {
+        opacity: 1;
+        transform: translateY(0)
     }
+}
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-500%)
+    }
+    // 65% {
+    //     opacity: .5;
+    //     transform: translateY(250%)
+    // }
     100% {
         opacity: 1;
         transform: translateY(0)
@@ -40,7 +54,12 @@
   .moveInBottom {
     animation-name: moveInBottom;
     animation-duration: 1s;
-    animation-delay: .5s;
-    animation-fill-mode: backwards;
-    animation-timing-function: ease-out;
+    animation-delay: .3s;
+    animation-fill-mode: both;
+  }
+  .moveInTop {
+    animation-name: moveInTop;
+    animation-duration: 1s;
+    animation-delay: .3s;
+    animation-fill-mode: both;
   }
