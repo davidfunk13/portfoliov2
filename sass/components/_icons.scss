@@ -1,5 +1,5 @@
 .tech-icon {
-  width: 65rem;
+  width: 90rem;
   display: flex;
   flex-flow: wrap;
   justify-content: center;
@@ -8,13 +8,12 @@
 
 }
 .icon {
-  padding: 1rem;
   text-align: center;
-  font-size: 6rem;
+  font-size: 5rem;
   color: white;
   background-color: rgb(69, 69, 85);
   -webkit-clip-path: polygon(50% 10%, 85% 25%, 85% 75%, 50% 90%, 15% 75%, 15% 25%);
   clip-path: polygon(50% 10%, 85% 25%, 85% 75%, 50% 90%, 15% 75%, 15% 25%);
-  padding: 3rem;
+  padding: 2rem;
   border: 1px solid white
 }
