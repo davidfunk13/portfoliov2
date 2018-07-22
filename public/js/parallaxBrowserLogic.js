@@ -5,7 +5,10 @@ let scrollSensitivitySetting = 30; //Increase/decrease this number to change sen
 let slideDurationSetting = 1500; //Amount of time for which slide is "locked"
 let currentSlideNumber = 0;
 let totalSlideNumber = $(".background").length;
-
+let headingPrimary = $('.heading-primary');
+let headingSecondary = $('.heading-secondary');
+let headingTertiary = $('.heading-tertiary');
+let slide = $('.background');
 
 function parallaxScroll(evt) {
   if (isFirefox) {
@@ -45,37 +48,110 @@ function slideDurationTimeout(slideDuration) {
 }
 
 let mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), { passive: true });
-
+window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), {
+  passive: true
+});
 
 function nextItem() {
-  let $previousSlide = $(".background").eq(currentSlideNumber - 1);
-  let $currentHeading = $(".heading-primary").eq(currentSlideNumber);
-  let $previousHeading = $(".heading-primary").eq(currentSlideNumber - 1);
-  let $icon = $(".icon")
+  // console.log(currentSlideNumber)
+  //slide selectors
+  let $previousSlide = slide.eq(currentSlideNumber - 1);
+  // //element selectors
+  let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber)
+  let $previousHeadingPrimary = headingPrimary.eq(currentSlideNumber - 1);
+  // //actions
   $previousSlide.removeClass("up-scroll").addClass("down-scroll");
-  $currentHeading.addClass('moveInBottom').removeClass('moveInTop');
-  if (currentSlideNumber === 1) {
-    $icon.addClass('moveInBottom').removeClass('moveInTop')
+  // $currentHeadingPrimary.addClass('moveInBottom').removeClass('moveInTop');
+  // //class reset
+  // setTimeout(function () {
+  //   $previousHeadingPrimary.removeClass('moveInTop');
+  //   $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
+  // }, 1300)
+  switch (currentSlideNumber) {
+    case 0:
+      //classes
+      $currentHeadingPrimary.addClass('moveInBottom');
+      //reset
+      setTimeout(function () {
+        $previousHeadingPrimary.removeClass('moveInTop moveInBottom');
+        $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
+      }, 1300)
+      break;
+    case 1:
+      //classes
+      $currentHeadingPrimary.addClass('moveInBottom');
+      //reset
+      setTimeout(function () {
+        $previousHeadingPrimary.removeClass('moveInTop moveInBottom');
+        $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
+      }, 1300)
+      break;
+    case 2:
+      //classes
+      $currentHeadingPrimary.addClass('moveInBottom');
+      //reset
+      setTimeout(function () {
+        $previousHeadingPrimary.removeClass('moveInTop moveInBottom');
+        $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
+      }, 1300)
+      break;
+    case 3:
+      //classes
+      $currentHeadingPrimary.addClass('moveInBottom');
+      //reset
+      setTimeout(function () {
+        $previousHeadingPrimary.removeClass('moveInTop moveInBottom');
+        $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
+      }, 1300)
+      break;
+    default:
+      console.log('shitballz');
+      break;
   }
-  setTimeout(function () {
-    $previousHeading.removeClass('moveInTop')
-    $currentHeading.removeClass('moveInBottom')
-    $currentHeading.removeClass('moveInTop')
-  }, 1300)
 }
 
 function previousItem() {
-  let $currentHeading = $(".heading-primary").eq(currentSlideNumber);
-  let $currentSlide = $(".background").eq(currentSlideNumber);
-  let $icon = $(".icon")
-  if(currentSlideNumber===1) {
-    $icon.removeClass('moveInBottom').addClass('moveInTop')
+  // //slide selectors
+  let $currentSlide = slide.eq(currentSlideNumber);
+  // //element selectors
+  let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber);
+  //actions for every slide
+  $currentSlide.removeClass("down-scroll").addClass("up-scroll");
+  switch (currentSlideNumber) {
+    case 0:
+      //clases
+      $currentHeadingPrimary.addClass('moveInTop');
+      //reset
+      setTimeout(function () {
+        $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
+      }, 1300)
+      break;
+    case 1:
+      //clases
+      $currentHeadingPrimary.addClass('moveInTop');
+      //reset
+      setTimeout(function () {
+        $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
+      }, 1300)
+      break;
+    case 2:
+      //clases
+      $currentHeadingPrimary.addClass('moveInTop');
+      //reset
+      setTimeout(function () {
+        $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
+      }, 1300)
+      break;
+    case 3:
+      //clases
+      $currentHeadingPrimary.addClass('moveInTop');
+      //reset
+      setTimeout(function () {
+        $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
+      }, 1300)
+      break;
+    default:
+      console.log('shitballz')
+      break;
   }
-  $currentSlide.removeClass("down-scroll").addClass("up-scroll")
-  $currentHeading.addClass('moveInTop')
-  setTimeout(function () {
-    $currentHeading.removeClass('moveInTop');
-    $currentHeading.removeClass('moveInBottom')
-  }, 1300)
 }
