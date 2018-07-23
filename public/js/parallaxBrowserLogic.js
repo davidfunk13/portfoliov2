@@ -1,18 +1,18 @@
 let ticking = false;
-let isFirefox = (/Firefox/i.test(navigator.userAgent));
-let isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
-let scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
+let isFirefox = /Firefox/i.test(navigator.userAgent);
+let isIe = /MSIE/i.test(navigator.userAgent) || /Trident.*rv\:11\./i.test(navigator.userAgent);
+let scrollSensitivitySetting = 100; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive)
 let slideDurationSetting = 1500; //Amount of time for which slide is "locked"
 let currentSlideNumber = 0;
 let totalSlideNumber = $(".background").length;
-let headingPrimary = $('.heading-primary');
-let headingSecondary = $('.heading-secondary');
-let headingTertiary = $('.heading-tertiary');
-let slide = $('.background');
+let headingPrimary = $(".heading-primary");
+let headingSecondary = $(".heading-secondary");
+let headingTertiary = $(".heading-tertiary");
+let slide = $(".background");
 
 function parallaxScroll(evt) {
   if (isFirefox) {
-    delta = evt.detail * (-120);
+    delta = evt.detail * -120;
   } else if (isIe) {
     delta = -evt.deltaY;
   } else {
@@ -53,42 +53,50 @@ window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), {
 });
 
 function nextItem() {
-  // console.log(currentSlideNumber)
   //slide selectors
   let $previousSlide = slide.eq(currentSlideNumber - 1);
   // //element selectors
-  let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber)
+  let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber);
   let $previousHeadingPrimary = headingPrimary.eq(currentSlideNumber - 1);
   // //actions
-
   $previousSlide.removeClass("up-scroll").addClass("down-scroll");
-  $currentHeadingPrimary.addClass('moveInBottom');
-
-  // $currentHeadingPrimary.addClass('moveInBottom').removeClass('moveInTop');
+  $currentHeadingPrimary.addClass("moveInBottom");
   // //class reset
   setTimeout(function () {
-    $previousHeadingPrimary.removeClass('moveInTop');
-    $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
-  }, 1300)
+    $previousHeadingPrimary.removeClass("moveInTop");
+    $currentHeadingPrimary.removeClass("moveInBottom moveInTop");
+  }, 1300);
   switch (currentSlideNumber) {
     case 0:
-
       break;
     case 1:
-      $('#1-h3').addClass('moveInBottom');
+      //classs added
+      $("#1-h3").addClass("moveInBottom");
+      $('#icon-div').addClass('moveInBottom');
       // //class reset
       setTimeout(function () {
-        $('#1-h3').removeClass('moveInBottom');
-      }, 1300)
+        $("#1-h3").removeClass("moveInBottom");
+        $('#icon-div').removeClass('moveInBottom');
+      }, 1300);
       break;
     case 2:
-
+      $("#2-h2").addClass("moveInBottom");
+      // //class reset
+      setTimeout(function () {
+        $("#2-h2").removeClass("moveInBottom");
+      }, 1300);
       break;
     case 3:
-
+      $("#3-h2").addClass("moveInBottom");
+      $("#3-h3").addClass("moveInBottom");
+      // //class reset
+      setTimeout(function () {
+        $("#3-h2").removeClass("moveInBottom");
+        $("#3-h3").removeClass("moveInBottom");
+      }, 1300);
       break;
     default:
-      console.log('shitballz');
+      console.log("shitballz");
       break;
   }
 }
@@ -99,26 +107,40 @@ function previousItem() {
   // //element selectors
   let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber);
   //actions for every slide
-
   $currentSlide.removeClass("down-scroll").addClass("up-scroll");
-  $currentHeadingPrimary.addClass('moveInTop');
+  $currentHeadingPrimary.addClass("moveInTop");
   setTimeout(function () {
-    $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
-  }, 1300)
-
-  // switch (currentSlideNumber) {
-  //   case 0:
-  // /
-  //     break;
-  //   case 1:
-  //     break;
-  //   case 2:
-
-  //     break;
-  //   case 3:
-  //     break;
-  //   default:
-  //     console.log('shitballz')
-  //     break;
-  // }
+    $currentHeadingPrimary.removeClass("moveInTop moveInBottom");
+  }, 1300);
+  switch (currentSlideNumber) {
+    case 0:
+      $("#0-h2").addClass("moveInTop");
+      // //class reset
+      setTimeout(function () {
+        $("#0-h2").removeClass("moveInTop");
+      }, 1300);
+      break;
+    case 1:
+      $("#1-h3").addClass("moveInTop");
+      ///large icon animation would be here//
+      $('#icon-div').addClass('moveInTop')
+      // //class reset
+      setTimeout(function () {
+        $("#1-h3").removeClass("moveInTop");
+        $('#icon-div').removeClass('moveInTop')
+      }, 1300);
+      break;
+    case 2:
+      $("#2-h2").addClass("moveInTop");
+      // //class reset
+      setTimeout(function () {
+        $("#2-h2").removeClass("moveInTop");
+      }, 1300);
+      break;
+    case 3:
+      break;
+    default:
+      console.log("shitballz");
+      break;
+  }
 }
