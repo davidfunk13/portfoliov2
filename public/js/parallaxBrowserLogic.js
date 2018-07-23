@@ -70,23 +70,27 @@ function nextItem() {
     $previousHeadingPrimary.removeClass('moveInTop');
     $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
   }, 1300)
-  // switch (currentSlideNumber) {
-  //   case 0:
+  switch (currentSlideNumber) {
+    case 0:
 
-  //     break;
-  //   case 1:
+      break;
+    case 1:
+      $('#1-h3').addClass('moveInBottom');
+      // //class reset
+      setTimeout(function () {
+        $('#1-h3').removeClass('moveInBottom');
+      }, 1300)
+      break;
+    case 2:
 
-  //     break;
-  //   case 2:
+      break;
+    case 3:
 
-  //     break;
-  //   case 3:
-
-  //     break;
-  //   default:
-  //     console.log('shitballz');
-  //     break;
-  // }
+      break;
+    default:
+      console.log('shitballz');
+      break;
+  }
 }
 
 function previousItem() {
