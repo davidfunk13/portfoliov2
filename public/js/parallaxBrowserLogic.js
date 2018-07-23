@@ -60,54 +60,33 @@ function nextItem() {
   let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber)
   let $previousHeadingPrimary = headingPrimary.eq(currentSlideNumber - 1);
   // //actions
+
   $previousSlide.removeClass("up-scroll").addClass("down-scroll");
+  $currentHeadingPrimary.addClass('moveInBottom');
+
   // $currentHeadingPrimary.addClass('moveInBottom').removeClass('moveInTop');
   // //class reset
-  // setTimeout(function () {
-  //   $previousHeadingPrimary.removeClass('moveInTop');
-  //   $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
-  // }, 1300)
-  switch (currentSlideNumber) {
-    case 0:
-      //classes
-      $currentHeadingPrimary.addClass('moveInBottom');
-      //reset
-      setTimeout(function () {
-        $previousHeadingPrimary.removeClass('moveInTop moveInBottom');
-        $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
-      }, 1300)
-      break;
-    case 1:
-      //classes
-      $currentHeadingPrimary.addClass('moveInBottom');
-      //reset
-      setTimeout(function () {
-        $previousHeadingPrimary.removeClass('moveInTop moveInBottom');
-        $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
-      }, 1300)
-      break;
-    case 2:
-      //classes
-      $currentHeadingPrimary.addClass('moveInBottom');
-      //reset
-      setTimeout(function () {
-        $previousHeadingPrimary.removeClass('moveInTop moveInBottom');
-        $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
-      }, 1300)
-      break;
-    case 3:
-      //classes
-      $currentHeadingPrimary.addClass('moveInBottom');
-      //reset
-      setTimeout(function () {
-        $previousHeadingPrimary.removeClass('moveInTop moveInBottom');
-        $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
-      }, 1300)
-      break;
-    default:
-      console.log('shitballz');
-      break;
-  }
+  setTimeout(function () {
+    $previousHeadingPrimary.removeClass('moveInTop');
+    $currentHeadingPrimary.removeClass('moveInBottom moveInTop');
+  }, 1300)
+  // switch (currentSlideNumber) {
+  //   case 0:
+
+  //     break;
+  //   case 1:
+
+  //     break;
+  //   case 2:
+
+  //     break;
+  //   case 3:
+
+  //     break;
+  //   default:
+  //     console.log('shitballz');
+  //     break;
+  // }
 }
 
 function previousItem() {
@@ -116,42 +95,26 @@ function previousItem() {
   // //element selectors
   let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber);
   //actions for every slide
+
   $currentSlide.removeClass("down-scroll").addClass("up-scroll");
-  switch (currentSlideNumber) {
-    case 0:
-      //clases
-      $currentHeadingPrimary.addClass('moveInTop');
-      //reset
-      setTimeout(function () {
-        $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
-      }, 1300)
-      break;
-    case 1:
-      //clases
-      $currentHeadingPrimary.addClass('moveInTop');
-      //reset
-      setTimeout(function () {
-        $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
-      }, 1300)
-      break;
-    case 2:
-      //clases
-      $currentHeadingPrimary.addClass('moveInTop');
-      //reset
-      setTimeout(function () {
-        $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
-      }, 1300)
-      break;
-    case 3:
-      //clases
-      $currentHeadingPrimary.addClass('moveInTop');
-      //reset
-      setTimeout(function () {
-        $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
-      }, 1300)
-      break;
-    default:
-      console.log('shitballz')
-      break;
-  }
+  $currentHeadingPrimary.addClass('moveInTop');
+  setTimeout(function () {
+    $currentHeadingPrimary.removeClass('moveInTop moveInBottom');
+  }, 1300)
+
+  // switch (currentSlideNumber) {
+  //   case 0:
+  // /
+  //     break;
+  //   case 1:
+  //     break;
+  //   case 2:
+
+  //     break;
+  //   case 3:
+  //     break;
+  //   default:
+  //     console.log('shitballz')
+  //     break;
+  // }
 }
