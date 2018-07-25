@@ -9,6 +9,8 @@ let headingPrimary = $(".heading-primary");
 let headingSecondary = $(".heading-secondary");
 let headingTertiary = $(".heading-tertiary");
 let slide = $(".background");
+let iconIds = ['#1-icon-css', '#1-icon-express', '#1-icon-git', '#1-icon-heroku', '#1-icon-html', '#1-icon-illustrator', '#1-icon-javascript', '#1-icon-jquery', '#1-icon-mongodb', '#1-icon-nodejs', '#1-icon-photoshop', '#1-icon-react', '#1-icon-sass', '#1-icon-sequelize', '#1-icon-bootstrap'];
+let animationDelayTimes = ['.1s', '.2s', '.3s', '.4s', '.5s', '.6s', '.1s', '.2s', '.3s', '.4s', '.5s', '.6s', '.7s', '.4s']
 
 function parallaxScroll(evt) {
   if (isFirefox) {
@@ -73,6 +75,11 @@ function nextItem() {
       //classs added
       $("#1-h3").addClass("moveInBottom");
       $('#icon-div').addClass('moveInBottom');
+      //icons
+for (var i = 0; i < iconIds.length; i++) {
+  $(iconIds[i]).addClass('moveInBottom');
+  $(iconIds[i]).css({"animation-delay": animationDelayTimes[i]});
+}
       // //class reset
       setTimeout(function () {
         $("#1-h3").removeClass("moveInBottom");
