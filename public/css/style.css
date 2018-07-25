@@ -134,6 +134,19 @@ body {
   padding: 2rem;
   border: 1px solid white; }
 
+.portfolio-box {
+  border: 1px solid white;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem; }
+  .portfolio-box__screenshot {
+    background-image: url("/img/srtracker.png");
+    background-size: contain;
+    margin: 2rem;
+    height: 20rem; }
+
 .background {
   background-size: cover;
   background-repeat: no-repeat;

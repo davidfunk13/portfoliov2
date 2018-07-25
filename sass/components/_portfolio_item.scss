@@ -1,0 +1,17 @@
+.portfolio-box{
+    border: 1px solid white;
+    width: auto;
+    height: auto;
+margin-left: auto;
+margin-right: auto;
+padding: 1rem;
+
+&__screenshot{
+    background-image: url('/img/srtracker.png');
+    background-size: contain;
+    margin: 2rem;
+    height: 20rem;
+}
+
+
+}
