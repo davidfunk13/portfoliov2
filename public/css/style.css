@@ -88,6 +88,17 @@ body {
   font-family: Montserrat;
   text-transform: uppercase; }
 
+a:link {
+  text-decoration: none; }
+
+.tooltiptext {
+  font-family: Montserrat;
+  font-size: 1.3rem;
+  letter-spacing: .2rem;
+  padding-bottom: .5rem;
+  text-align: center;
+  text-transform: uppercase; }
+
 .u-center-text {
   text-align: center; }
 
@@ -111,6 +122,13 @@ body {
 
 .text-box-border {
   border: 1rem solid white;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 2rem;
+  padding-right: 2rem; }
+
+.text-box-border-thin {
+  border: .2rem solid white;
   margin-right: auto;
   margin-left: auto;
   padding-left: 2rem;
@@ -150,8 +168,18 @@ body {
     display: flex;
     justify-content: center; }
     .portfolio-box__screenshot--img {
+      -webkit-clip-path: circle(35% at 50% 50%);
+      clip-path: circle(35% at 50% 50%);
       border: 1px solid black;
       height: 15rem; }
+
+#srtracker_tooltip {
+  font-size: 5rem;
+  display: none; }
+
+.tooltipimg {
+  max-width: 100%;
+  border: 1px solid black; }
 
 .background {
   background-size: cover;

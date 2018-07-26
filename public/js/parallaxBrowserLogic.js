@@ -9,8 +9,58 @@ let headingPrimary = $(".heading-primary");
 let headingSecondary = $(".heading-secondary");
 let headingTertiary = $(".heading-tertiary");
 let slide = $(".background");
-let iconIds = ['#1-icon-css', '#1-icon-express', '#1-icon-git', '#1-icon-heroku', '#1-icon-html', '#1-icon-illustrator', '#1-icon-javascript', '#1-icon-jquery', '#1-icon-mongodb', '#1-icon-nodejs', '#1-icon-photoshop', '#1-icon-react', '#1-icon-sass', '#1-icon-sequelize', '#1-icon-bootstrap'];
-let animationDelayTimes = ['.1s', '.2s', '.3s', '.4s', '.5s', '.6s', '.1s', '.2s', '.3s', '.4s', '.5s', '.6s', '.7s', '.4s']
+let iconIds = [
+  '#1-icon-css',
+  '#1-icon-express',
+  '#1-icon-git',
+  '#1-icon-heroku',
+  '#1-icon-html',
+  '#1-icon-illustrator',
+  '#1-icon-javascript',
+  '#1-icon-jquery',
+  '#1-icon-mongodb',
+  '#1-icon-nodejs',
+  '#1-icon-photoshop',
+  '#1-icon-react',
+  '#1-icon-sass',
+  '#1-icon-sequelize',
+  '#1-icon-bootstrap'
+];
+//15 classes
+let animationDelayTimesDown = [
+  '.1s',
+  '.2s',
+  '.3s',
+  '.3s',
+  '.3s',
+  '.3s',
+  '.3s',
+  '.2s',
+  '.1s',
+  '.1s',
+  '.2s',
+  '.3s',
+  '.3s',
+  '.2s',
+  '.1s'
+]
+let animationDelayTimesUp = [
+  '.3s',
+  '.25s',
+  '.2s',
+  '.15s',
+  '.1s',
+  '.15s',
+  '.2s',
+  '.25s',
+  '.3s',
+  '.3s',
+  '.2s',
+  '.1s',
+  '.1s',
+  '.2s',
+  '.3s'
+]
 
 function parallaxScroll(evt) {
   if (isFirefox) {
@@ -54,6 +104,24 @@ window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), {
   passive: true
 });
 
+//tooltips
+$('.srtracker').qtip({
+  show: 'click',
+  hide: 'unfocus click',
+  content: {
+    text: $('#srtracker_tooltip').html()
+  },
+  style: {
+    height: 'auto',
+    classes: 'qtip-bootstrap qtip-shadow'
+},
+position: {
+  my: 'bottom center',  // Position my top left...
+  at: 'top center', // at the bottom right of...
+  target: $('.srtracker') // my target
+}
+})
+
 function nextItem() {
   //slide selectors
   let $previousSlide = slide.eq(currentSlideNumber - 1);
@@ -74,24 +142,33 @@ function nextItem() {
     case 1:
       //classs added
       $("#1-h3").addClass("moveInBottom");
-      $('#icon-div').addClass('moveInBottom');
+      $('#icon-div').addClass('moveInBottom')
       //icons
-for (var i = 0; i < iconIds.length; i++) {
-  $(iconIds[i]).addClass('moveInBottom');
-  $(iconIds[i]).css({"animation-delay": animationDelayTimes[i]});
-}
+      for (var i = 0; i < iconIds.length; i++) {
+        $(iconIds[i]).addClass('moveInBottom');
+        $(iconIds[i]).css({
+          "animation-delay": animationDelayTimesDown[i]
+        });
+      }
       // //class reset
       setTimeout(function () {
         $("#1-h3").removeClass("moveInBottom");
         $('#icon-div').removeClass('moveInBottom');
+        $('.icon').removeClass('moveInBottom')
       }, 1300);
       break;
     case 2:
       $("#2-h2").addClass("moveInBottom");
+      $("#2-h3").addClass("moveInBottom").css({'animation-delay': '1s'});
+      $(".srtracker").addClass("moveInBottom").css({'animation-delay': '1s'});
       // //class reset
       setTimeout(function () {
         $("#2-h2").removeClass("moveInBottom");
-      }, 1300);
+        $(".srtracker").addClass("moveInBottom")      }, 1300);
+      setTimeout(function () {
+        $(".srtracker").removeClass("moveInBottom");
+        $("#2-h3").removeClass("moveInBottom");
+      }, 2000);
       break;
     case 3:
       $("#3-h2").addClass("moveInBottom");
@@ -130,19 +207,33 @@ function previousItem() {
     case 1:
       $("#1-h3").addClass("moveInTop");
       ///large icon animation would be here//
-      $('#icon-div').addClass('moveInTop')
+      $('#icon-div').addClass('moveInTop');
+      //icons
+      for (var i = 0; i < iconIds.length; i++) {
+        $(iconIds[i]).addClass('moveInTop');
+        $(iconIds[i]).css({
+          "animation-delay": animationDelayTimesUp[i]
+        });
+      }
       // //class reset
       setTimeout(function () {
         $("#1-h3").removeClass("moveInTop");
         $('#icon-div').removeClass('moveInTop')
+        $('.icon').removeClass('moveInTop');
       }, 1300);
       break;
     case 2:
       $("#2-h2").addClass("moveInTop");
+      $("#2-h3").addClass("moveInTop");
+      $(".srtracker").addClass("moveInTop");
       // //class reset
       setTimeout(function () {
         $("#2-h2").removeClass("moveInTop");
       }, 1300);
+      setTimeout(function () {
+        $("#2-h3").removeClass("moveInTop");
+        $(".srtracker").removeClass("moveInTop");
+      }, 2000);
       break;
     case 3:
       break;

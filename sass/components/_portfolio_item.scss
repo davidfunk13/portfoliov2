@@ -15,8 +15,19 @@
         display: flex;
         justify-content: center;
         &--img {
+            -webkit-clip-path: circle(35% at 50% 50%);
+            clip-path: circle(35% at 50% 50%);
             border: 1px solid black;
             height: 15rem;
         }
     }
+}
+
+#srtracker_tooltip{
+    font-size: 5rem;
+    display: none;
+}
+.tooltipimg{
+    max-width: 100%;
+    border: 1px solid black;
 }
