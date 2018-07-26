@@ -7,22 +7,6 @@
     height: auto;
 }
 
-.portfolio-box {
-    width: 35%;
-    &__screenshot {
-        padding: 1rem;
-        padding-bottom: .5rem;
-        display: flex;
-        justify-content: center;
-        &--img {
-            -webkit-clip-path: circle(35% at 50% 50%);
-            clip-path: circle(35% at 50% 50%);
-            border: 1px solid black;
-            height: 15rem;
-        }
-    }
-}
-
 #srtracker_tooltip{
     font-size: 5rem;
     display: none;

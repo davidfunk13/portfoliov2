@@ -5,7 +5,6 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-
 }
 .icon {
   text-align: center;
@@ -16,4 +15,14 @@
   clip-path: polygon(50% 10%, 85% 25%, 85% 75%, 50% 90%, 15% 75%, 15% 25%);
   padding: 2rem;
   border: 1px solid white
+}
+@media screen and (max-width: 320px) {
+  .tech-icon {
+    width: auto;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

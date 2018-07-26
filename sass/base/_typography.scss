@@ -1,12 +1,13 @@
-.heading-primary{
+.heading-primary {
     text-align: center;
-    font-size: 12vh;
+    font-size: 10rem;
     line-height: 1.4;
     color: #fff;
     font-family: Montserrat;
-    text-transform: uppercase; 
+    text-transform: uppercase;
 }
-.heading-secondary{
+
+.heading-secondary {
     text-align: center;
     font-size: 2rem;
     line-height: 1.4;
@@ -15,7 +16,8 @@
     text-transform: uppercase;
     letter-spacing: .2rem;
 }
-.heading-tertiary{
+
+.heading-tertiary {
     text-align: center;
     font-size: 1.3rem;
     line-height: 1.4;
@@ -24,10 +26,12 @@
     font-family: Montserrat;
     text-transform: uppercase;
 }
-a:link{
-text-decoration: none;
+
+a:link {
+    text-decoration: none;
 }
-.tooltiptext{
+
+.tooltiptext {
     font-family: Montserrat;
     font-size: 1.3rem;
     letter-spacing: .2rem;
@@ -36,5 +40,27 @@ text-decoration: none;
     text-transform: uppercase;
 }
 
-
-
+@media screen and (max-width: 320px) {
+    #3-h1{
+        font-size: .2rem;
+    }
+    .heading-primary {
+        text-align: center;
+        font-size: 4rem;
+        line-height: 1.4;
+        color: #fff;
+        font-family: Montserrat; // text-transform: uppercase;
+    }
+    .contact-heading{
+        font-size: 3rem;
+    }
+    .heading-secondary {
+        font-size: 1rem;
+    }
+    .heading-tertiary {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: .5rem;
+    }
+   
+}

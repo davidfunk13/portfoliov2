@@ -116,9 +116,9 @@ $('.srtracker').qtip({
     classes: 'qtip-bootstrap qtip-shadow'
 },
 position: {
-  my: 'bottom center',  // Position my top left...
-  at: 'top center', // at the bottom right of...
-  target: $('.srtracker') // my target
+  my: 'bottom center',
+  at: 'top center',
+  target: $('.srtracker')
 }
 })
 
@@ -180,7 +180,7 @@ function nextItem() {
       }, 1300);
       break;
     default:
-      console.log("shitballz");
+      console.log("default");
       break;
   }
 }
@@ -238,7 +238,7 @@ function previousItem() {
     case 3:
       break;
     default:
-      console.log("shitballz");
+      console.log("default");
       break;
   }
 }
