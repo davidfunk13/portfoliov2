@@ -62,6 +62,9 @@ let animationDelayTimesUp = [
   '.3s'
 ]
 
+//hopefull mobile support
+$(document.body).on('touchmove', parallaxScroll); // for mobile 
+
 function parallaxScroll(evt) {
   if (isFirefox) {
     delta = evt.detail * -120;
