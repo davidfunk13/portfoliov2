@@ -70,7 +70,7 @@ hammerTime.on("panup pandown", function (ev) {
   
   ev.preventDefault()
   console.log(ev)
-  let delta = -ev.deltaY;
+  let delta = ev.deltaY;
   if (ticking != true) {
     if (delta <= -scrollSensitivitySetting) {
       ticking = true;
