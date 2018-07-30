@@ -61,7 +61,7 @@ let animationDelayTimesUp = [
   '.2s',
   '.3s'
 ]
-let body = document.getElementsByClassName('.headingPrimary');
+let body = document.getElementsByClassName('.heading-primary');
 
 let hammerTime = new Hammer(body);
 
