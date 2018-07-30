@@ -61,9 +61,33 @@ let animationDelayTimesUp = [
   '.2s',
   '.3s'
 ]
+let body = document.getElementsByTagName("BODY")[0];
 
-//hopefull mobile support
-$(document.body).on('touchmove', parallaxScroll); // for mobile 
+let hammerTime = new Hammer(body);
+
+hammerTime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+hammerTime.on("panup pandown", function (ev) {
+  ev.preventDefault()
+  let delta = ev.deltaY;
+  if (ticking != true) {
+    if (delta <= -scrollSensitivitySetting) {
+      ticking = true;
+      if (currentSlideNumber !== totalSlideNumber - 1) {
+        currentSlideNumber++;
+        nextItem();
+      }
+      slideDurationTimeout(slideDurationSetting);
+    }
+    if (delta >= scrollSensitivitySetting) {
+      ticking = true;
+      if (currentSlideNumber !== 0) {
+        currentSlideNumber--;
+        previousItem();
+      }
+      slideDurationTimeout(slideDurationSetting);
+    }
+  }
+})
 
 function parallaxScroll(evt) {
   if (isFirefox) {
@@ -73,7 +97,6 @@ function parallaxScroll(evt) {
   } else {
     delta = evt.wheelDelta;
   }
-
   if (ticking != true) {
     if (delta <= -scrollSensitivitySetting) {
       //Down scroll
@@ -117,12 +140,12 @@ $('.srtracker').qtip({
   style: {
     height: 'auto',
     classes: 'qtip-bootstrap qtip-shadow'
-},
-position: {
-  my: 'bottom center',
-  at: 'top center',
-  target: $('.srtracker')
-}
+  },
+  position: {
+    my: 'bottom center',
+    at: 'top center',
+    target: $('.srtracker')
+  }
 })
 
 function nextItem() {
@@ -162,12 +185,13 @@ function nextItem() {
       break;
     case 2:
       $("#2-h2").addClass("moveInBottom");
-      $("#2-h3").addClass("moveInBottom").css({'animation-delay': '1s'});
-      $(".srtracker").addClass("moveInBottom").css({'animation-delay': '1s'});
+      $("#2-h3").addClass("moveInBottom").css({ 'animation-delay': '1s' });
+      $(".srtracker").addClass("moveInBottom").css({ 'animation-delay': '1s' });
       // //class reset
       setTimeout(function () {
         $("#2-h2").removeClass("moveInBottom");
-        $(".srtracker").addClass("moveInBottom")      }, 1300);
+        $(".srtracker").addClass("moveInBottom")
+      }, 1300);
       setTimeout(function () {
         $(".srtracker").removeClass("moveInBottom");
         $("#2-h3").removeClass("moveInBottom");
