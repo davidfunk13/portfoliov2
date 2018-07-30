@@ -67,8 +67,10 @@ let hammerTime = new Hammer(body);
 
 hammerTime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 hammerTime.on("panup pandown", function (ev) {
+  
   ev.preventDefault()
-  let delta = ev.deltaY;
+  console.log(ev)
+  let delta = -ev.deltaY;
   if (ticking != true) {
     if (delta <= -scrollSensitivitySetting) {
       ticking = true;
@@ -129,6 +131,8 @@ let mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
 window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), {
   passive: true
 });
+
+//add scroll event listener. this is how it will work on mobile.
 
 //tooltips
 $('.srtracker').qtip({

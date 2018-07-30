@@ -168,6 +168,29 @@ a:link {
   max-width: 100%;
   border: 1px solid black; }
 
+@media only screen and (min-width: 320px) and (max-width: 640px) {
+  .heading-primary {
+    margin-top: -5rem;
+    font-size: 5rem; }
+  .heading-secondary {
+    font-size: 1rem; }
+  .text-box-border {
+    border: .3rem solid white;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2rem;
+    padding-right: 2rem; }
+  #icon-div {
+    width: auto;
+    margin-bottom: -1rem; }
+  .icon {
+    font-size: 2.1rem; }
+  .heading-tertiary {
+    font-size: 1rem; }
+  .contact-heading {
+    padding: .8rem;
+    font-size: 4rem; } }
+
 .background {
   background-size: cover;
   background-repeat: no-repeat;
