@@ -60,36 +60,26 @@ let animationDelayTimesUp = [
   '.1s',
   '.2s',
   '.3s'
-]
-let body = document.getElementsByTagName("BODY")[0];
+];
+if (!$.mobile.support.touch) {
+console.log('does not support touch');
+}
+if ($.mobile.support.touch) {
+console.log('does support touch');
+}
+// function touchScrollStart(event){
+//   console.log(event)
+// }
+// function touchScrollMove(event){
+//   console.log(event)
+// }
+// function touchScrollEnd(event){
+//   console.log(event)
+// }
+// window.addEventListener('touchstart', _.throttle(touchScrollStart, 60), { passive: true })
+// window.addEventListener('touchmove', _.throttle(touchScrollMove, 60), { passive: true })
+// window.addEventListener('touchend', _.throttle(touchScrollEnd, 60), { passive: true })
 
-let hammerTime = new Hammer(body);
-
-hammerTime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-hammerTime.on("panup pandown", function (ev) {
-  
-  ev.preventDefault()
-  console.log(ev)
-  let delta = ev.deltaY;
-  if (ticking != true) {
-    if (delta <= -scrollSensitivitySetting) {
-      ticking = true;
-      if (currentSlideNumber !== totalSlideNumber - 1) {
-        currentSlideNumber++;
-        nextItem();
-      }
-      slideDurationTimeout(slideDurationSetting);
-    }
-    if (delta >= scrollSensitivitySetting) {
-      ticking = true;
-      if (currentSlideNumber !== 0) {
-        currentSlideNumber--;
-        previousItem();
-      }
-      slideDurationTimeout(slideDurationSetting);
-    }
-  }
-})
 
 function parallaxScroll(evt) {
   if (isFirefox) {
