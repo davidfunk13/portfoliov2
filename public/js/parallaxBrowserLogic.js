@@ -61,25 +61,13 @@ let animationDelayTimesUp = [
   '.2s',
   '.3s'
 ];
-if (!$.mobile.support.touch) {
-console.log('does not support touch');
-$('.downarrow').hide()
-}
-if ($.mobile.support.touch) {
-console.log('does support touch');
-}
-// function touchScrollStart(event){
-//   console.log(event)
+// if (!$.mobile.support.touch) {
+// console.log('does not support touch');
+// $('.downarrow').hide()
 // }
-// function touchScrollMove(event){
-//   console.log(event)
+// if ($.mobile.support.touch) {
+// console.log('does support touch');
 // }
-// function touchScrollEnd(event){
-//   console.log(event)
-// }
-// window.addEventListener('touchstart', _.throttle(touchScrollStart, 60), { passive: true })
-// window.addEventListener('touchmove', _.throttle(touchScrollMove, 60), { passive: true })
-// window.addEventListener('touchend', _.throttle(touchScrollEnd, 60), { passive: true })
 
 
 function parallaxScroll(evt) {

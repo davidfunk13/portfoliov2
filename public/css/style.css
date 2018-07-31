@@ -134,6 +134,18 @@ a:link {
   padding-left: 2rem;
   padding-right: 2rem; }
 
+.downarrow {
+  width: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem; }
+
+.uparrow {
+  width: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem; }
+
 .tech-icon {
   width: 90rem;
   display: flex;
