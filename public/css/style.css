@@ -54,7 +54,7 @@
   animation-fill-mode: both; }
 
 .fadeIn {
-  animation: fadeIn 1s 1.5s both; }
+  animation: fadeIn 1.4s 1.5s both; }
 
 *,
 *::after,
@@ -186,27 +186,41 @@ a:link {
   max-width: 100%;
   border: 1px solid black; }
 
-@media only screen and (min-width: 320px) and (max-width: 640px) {
-  .heading-primary {
-    margin-top: -5rem;
-    font-size: 5rem; }
-  .heading-secondary {
-    font-size: 1rem; }
-  .text-box-border {
-    border: .3rem solid white;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 2rem;
-    padding-right: 2rem; }
+@media only screen and (max-width: 900px) {
   #icon-div {
     width: auto;
-    margin-bottom: -1rem; }
-  .icon {
-    font-size: 2.1rem; }
-  .heading-tertiary {
-    font-size: 1rem; }
+    margin-bottom: -1rem; } }
+
+@media only screen and (max-width: 835px) {
+  .heading-primary {
+    font-size: 8rem; }
   .contact-heading {
-    padding: .8rem;
+    font-size: 8rem; }
+  .text-box-border {
+    border: .5rem solid white; } }
+
+@media only screen and (max-width: 700px) {
+  .heading-primary {
+    font-size: 6rem; }
+  .contact-heading {
+    font-size: 6rem; } }
+
+@media only screen and (max-width: 520px) {
+  .heading-primary {
+    font-size: 5rem; }
+  .contact-heading {
+    font-size: 5rem; } }
+
+@media only screen and (max-width: 425px) {
+  .heading-primary {
+    font-size: 4.5rem; }
+  .contact-heading {
+    font-size: 4.5rem; } }
+
+@media only screen and (max-width: 395px) {
+  .heading-primary {
+    font-size: 4rem; }
+  .contact-heading {
     font-size: 4rem; } }
 
 .background {

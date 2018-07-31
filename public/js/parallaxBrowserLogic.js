@@ -4,7 +4,7 @@ let isIe =
   /MSIE/i.test(navigator.userAgent) ||
   /Trident.*rv\:11\./i.test(navigator.userAgent);
 let scrollSensitivitySetting = 100; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive)
-let slideDurationSetting = 3000; //Amount of time for which slide is "locked"
+let slideDurationSetting = 2500; //Amount of time for which slide is "locked"
 let currentSlideNumber = 0;
 let totalSlideNumber = $(".background").length;
 let headingPrimary = $(".heading-primary");
@@ -66,11 +66,11 @@ let animationDelayTimesUp = [
   ".3s"
 ];
 if (!$.mobile.support.touch) {
-console.log('does not support touch');
-$('.arrow').hide()
+  console.log("does not support touch");
+  $(".arrow").hide();
 }
 if ($.mobile.support.touch) {
-console.log('does support touch');
+  console.log("does support touch");
 }
 
 $(document).on("click", ".arrow__down", () => {
@@ -85,7 +85,7 @@ $(document).on("click", ".arrow__down", () => {
   }
 });
 $(document).on("click", ".arrow__up", () => {
-  if (ticking != true){
+  if (ticking != true) {
     ticking = true;
     if (currentSlideNumber !== 0) {
       currentSlideNumber--;
@@ -125,7 +125,7 @@ function parallaxScroll(evt) {
 }
 
 function slideDurationTimeout(slideDuration) {
-  setTimeout(function () {
+  setTimeout(function() {
     ticking = false;
   }, slideDuration);
 }
@@ -161,22 +161,16 @@ function nextItem() {
   // //element selectors
   let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber);
   let $previousHeadingPrimary = headingPrimary.eq(currentSlideNumber - 1);
-  let $currentArrowDown = arrowDown.eq(currentSlideNumber);
-  let $currentArrowUp = arrowUp.eq(currentSlideNumber);
-  let $previousArrowDown = arrowDown.eq(currentSlideNumber - 1);
-
-  // //actions
+  //all slide actions
   $previousSlide.removeClass("up-scroll").addClass("down-scroll");
   $currentHeadingPrimary.addClass("moveInBottom");
-
   $(".arrow").addClass("fadeIn");
-  // $currentArrowUp.addClass("moveInBottom");
-  // //class reset
-  setTimeout(function () {
+  //all slide class reset
+  setTimeout(function() {
     $previousHeadingPrimary.removeClass("moveInTop");
     $currentHeadingPrimary.removeClass("moveInBottom moveInTop");
   }, 1300);
-  setTimeout(function () {
+  setTimeout(function() {
     $(".arrow").removeClass("fadeIn");
   }, 2000);
   switch (currentSlideNumber) {
@@ -195,7 +189,7 @@ function nextItem() {
         });
       }
       // //class reset
-      setTimeout(function () {
+      setTimeout(function() {
         $("#1-h3").removeClass("moveInBottom");
         $("#icon-div").removeClass("moveInBottom");
         $(".icon").removeClass("moveInBottom");
@@ -210,11 +204,11 @@ function nextItem() {
         .addClass("moveInBottom")
         .css({ "animation-delay": "1s" });
       // //class reset
-      setTimeout(function () {
+      setTimeout(function() {
         $("#2-h2").removeClass("moveInBottom");
         $(".srtracker").addClass("moveInBottom");
       }, 1300);
-      setTimeout(function () {
+      setTimeout(function() {
         $(".srtracker").removeClass("moveInBottom");
         $("#2-h3").removeClass("moveInBottom");
       }, 2000);
@@ -223,7 +217,7 @@ function nextItem() {
       $("#3-h2").addClass("moveInBottom");
       $("#3-h3").addClass("moveInBottom");
       // //class reset
-      setTimeout(function () {
+      setTimeout(function() {
         $("#3-h2").removeClass("moveInBottom");
         $("#3-h3").removeClass("moveInBottom");
       }, 1300);
@@ -244,15 +238,17 @@ function previousItem() {
   $currentSlide.removeClass("down-scroll").addClass("up-scroll");
   $currentHeadingPrimary.addClass("moveInTop");
   $(".arrow").addClass("fadeIn");
-  setTimeout(function () {
-    $(".arrow").removeClass("fadeIn");
+  setTimeout(function() {
     $currentHeadingPrimary.removeClass("moveInTop moveInBottom");
   }, 1300);
+  setTimeout(function() {
+    $(".arrow").removeClass("fadeIn");
+  }, 2000);
   switch (currentSlideNumber) {
     case 0:
       $("#0-h2").addClass("moveInTop");
       // //class reset
-      setTimeout(function () {
+      setTimeout(function() {
         $("#0-h2").removeClass("moveInTop");
       }, 1300);
       break;
@@ -268,7 +264,7 @@ function previousItem() {
         });
       }
       // //class reset
-      setTimeout(function () {
+      setTimeout(function() {
         $("#1-h3").removeClass("moveInTop");
         $("#icon-div").removeClass("moveInTop");
         $(".icon").removeClass("moveInTop");
@@ -279,10 +275,10 @@ function previousItem() {
       $("#2-h3").addClass("moveInTop");
       $(".srtracker").addClass("moveInTop");
       // //class reset
-      setTimeout(function () {
+      setTimeout(function() {
         $("#2-h2").removeClass("moveInTop");
       }, 1300);
-      setTimeout(function () {
+      setTimeout(function() {
         $("#2-h3").removeClass("moveInTop");
         $(".srtracker").removeClass("moveInTop");
       }, 2000);
