@@ -63,6 +63,7 @@ let animationDelayTimesUp = [
 ];
 if (!$.mobile.support.touch) {
 console.log('does not support touch');
+$('.downarrow').hide()
 }
 if ($.mobile.support.touch) {
 console.log('does support touch');
