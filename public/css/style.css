@@ -202,12 +202,18 @@ a:link {
 @media only screen and (max-width: 700px) {
   .heading-primary {
     font-size: 6rem; }
+  .heading-secondary {
+    font-size: 1.5rem; }
+  .heading-tertiary {
+    font-size: 1rem; }
   .contact-heading {
     font-size: 6rem; } }
 
 @media only screen and (max-width: 520px) {
   .heading-primary {
     font-size: 5rem; }
+  .heading-secondary {
+    font-size: 1.2rem; }
   .contact-heading {
     font-size: 5rem; } }
 
@@ -220,8 +226,10 @@ a:link {
 @media only screen and (max-width: 395px) {
   .heading-primary {
     font-size: 4rem; }
+  .heading-secondary {
+    font-size: 1rem; }
   .contact-heading {
-    font-size: 4rem; } }
+    font-size: 3.2rem; } }
 
 .background {
   background-size: cover;
