@@ -8,6 +8,14 @@
         transform: translateX(0)
     }
 }
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes moveInRight {
     0% {
@@ -54,4 +62,7 @@
     animation-duration: 1s;
     animation-delay: .3s;
     animation-fill-mode: both;
+  }
+  .fadeIn{
+      animation: fadeIn 1s 1.5s both;
   }

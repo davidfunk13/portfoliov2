@@ -1,75 +1,99 @@
 let ticking = false;
 let isFirefox = /Firefox/i.test(navigator.userAgent);
-let isIe = /MSIE/i.test(navigator.userAgent) || /Trident.*rv\:11\./i.test(navigator.userAgent);
+let isIe =
+  /MSIE/i.test(navigator.userAgent) ||
+  /Trident.*rv\:11\./i.test(navigator.userAgent);
 let scrollSensitivitySetting = 100; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive)
-let slideDurationSetting = 1500; //Amount of time for which slide is "locked"
+let slideDurationSetting = 3000; //Amount of time for which slide is "locked"
 let currentSlideNumber = 0;
 let totalSlideNumber = $(".background").length;
 let headingPrimary = $(".heading-primary");
 let headingSecondary = $(".heading-secondary");
 let headingTertiary = $(".heading-tertiary");
 let slide = $(".background");
+let arrowUp = $(".up");
+let arrowDown = $(".down");
 let iconIds = [
-  '#1-icon-css',
-  '#1-icon-express',
-  '#1-icon-git',
-  '#1-icon-heroku',
-  '#1-icon-html',
-  '#1-icon-illustrator',
-  '#1-icon-javascript',
-  '#1-icon-jquery',
-  '#1-icon-mongodb',
-  '#1-icon-nodejs',
-  '#1-icon-photoshop',
-  '#1-icon-react',
-  '#1-icon-sass',
-  '#1-icon-sequelize',
-  '#1-icon-bootstrap'
+  "#1-icon-css",
+  "#1-icon-express",
+  "#1-icon-git",
+  "#1-icon-heroku",
+  "#1-icon-html",
+  "#1-icon-illustrator",
+  "#1-icon-javascript",
+  "#1-icon-jquery",
+  "#1-icon-mongodb",
+  "#1-icon-nodejs",
+  "#1-icon-photoshop",
+  "#1-icon-react",
+  "#1-icon-sass",
+  "#1-icon-sequelize",
+  "#1-icon-bootstrap"
 ];
 //15 classes
 let animationDelayTimesDown = [
-  '.1s',
-  '.2s',
-  '.3s',
-  '.3s',
-  '.3s',
-  '.3s',
-  '.3s',
-  '.2s',
-  '.1s',
-  '.1s',
-  '.2s',
-  '.3s',
-  '.3s',
-  '.2s',
-  '.1s'
-]
-let animationDelayTimesUp = [
-  '.3s',
-  '.25s',
-  '.2s',
-  '.15s',
-  '.1s',
-  '.15s',
-  '.2s',
-  '.25s',
-  '.3s',
-  '.3s',
-  '.2s',
-  '.1s',
-  '.1s',
-  '.2s',
-  '.3s'
+  ".1s",
+  ".2s",
+  ".3s",
+  ".3s",
+  ".3s",
+  ".3s",
+  ".3s",
+  ".2s",
+  ".1s",
+  ".1s",
+  ".2s",
+  ".3s",
+  ".3s",
+  ".2s",
+  ".1s"
 ];
-// if (!$.mobile.support.touch) {
-// console.log('does not support touch');
-// $('.downarrow').hide()
-// }
-// if ($.mobile.support.touch) {
-// console.log('does support touch');
-// }
+let animationDelayTimesUp = [
+  ".3s",
+  ".25s",
+  ".2s",
+  ".15s",
+  ".1s",
+  ".15s",
+  ".2s",
+  ".25s",
+  ".3s",
+  ".3s",
+  ".2s",
+  ".1s",
+  ".1s",
+  ".2s",
+  ".3s"
+];
+if (!$.mobile.support.touch) {
+console.log('does not support touch');
+$('.arrow').hide()
+}
+if ($.mobile.support.touch) {
+console.log('does support touch');
+}
 
-
+$(document).on("click", ".arrow__down", () => {
+  console.log("down");
+  if (ticking != true) {
+    ticking = true;
+    if (currentSlideNumber !== totalSlideNumber - 1) {
+      currentSlideNumber++;
+      nextItem();
+    }
+    slideDurationTimeout(slideDurationSetting);
+  }
+});
+$(document).on("click", ".arrow__up", () => {
+  if (ticking != true){
+    ticking = true;
+    if (currentSlideNumber !== 0) {
+      currentSlideNumber--;
+      previousItem();
+    }
+    slideDurationTimeout(slideDurationSetting);
+  }
+});
 function parallaxScroll(evt) {
   if (isFirefox) {
     delta = evt.detail * -120;
@@ -114,22 +138,22 @@ window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), {
 //add scroll event listener. this is how it will work on mobile.
 
 //tooltips
-$('.srtracker').qtip({
-  show: 'click',
-  hide: 'unfocus click',
+$(".srtracker").qtip({
+  show: "click",
+  hide: "unfocus click",
   content: {
-    text: $('#srtracker_tooltip').html()
+    text: $("#srtracker_tooltip").html()
   },
   style: {
-    height: 'auto',
-    classes: 'qtip-bootstrap qtip-shadow'
+    height: "auto",
+    classes: "qtip-bootstrap qtip-shadow"
   },
   position: {
-    my: 'bottom center',
-    at: 'top center',
-    target: $('.srtracker')
+    my: "bottom center",
+    at: "top center",
+    target: $(".srtracker")
   }
-})
+});
 
 function nextItem() {
   //slide selectors
@@ -137,24 +161,35 @@ function nextItem() {
   // //element selectors
   let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber);
   let $previousHeadingPrimary = headingPrimary.eq(currentSlideNumber - 1);
+  let $currentArrowDown = arrowDown.eq(currentSlideNumber);
+  let $currentArrowUp = arrowUp.eq(currentSlideNumber);
+  let $previousArrowDown = arrowDown.eq(currentSlideNumber - 1);
+
   // //actions
   $previousSlide.removeClass("up-scroll").addClass("down-scroll");
   $currentHeadingPrimary.addClass("moveInBottom");
+
+  $(".arrow").addClass("fadeIn");
+  // $currentArrowUp.addClass("moveInBottom");
   // //class reset
   setTimeout(function () {
     $previousHeadingPrimary.removeClass("moveInTop");
     $currentHeadingPrimary.removeClass("moveInBottom moveInTop");
   }, 1300);
+  setTimeout(function () {
+    $(".arrow").removeClass("fadeIn");
+  }, 2000);
   switch (currentSlideNumber) {
     case 0:
       break;
     case 1:
       //classs added
       $("#1-h3").addClass("moveInBottom");
-      $('#icon-div').addClass('moveInBottom')
+      $("#icon-div").addClass("moveInBottom");
+
       //icons
       for (var i = 0; i < iconIds.length; i++) {
-        $(iconIds[i]).addClass('moveInBottom');
+        $(iconIds[i]).addClass("moveInBottom");
         $(iconIds[i]).css({
           "animation-delay": animationDelayTimesDown[i]
         });
@@ -162,18 +197,22 @@ function nextItem() {
       // //class reset
       setTimeout(function () {
         $("#1-h3").removeClass("moveInBottom");
-        $('#icon-div').removeClass('moveInBottom');
-        $('.icon').removeClass('moveInBottom')
+        $("#icon-div").removeClass("moveInBottom");
+        $(".icon").removeClass("moveInBottom");
       }, 1300);
       break;
     case 2:
       $("#2-h2").addClass("moveInBottom");
-      $("#2-h3").addClass("moveInBottom").css({ 'animation-delay': '1s' });
-      $(".srtracker").addClass("moveInBottom").css({ 'animation-delay': '1s' });
+      $("#2-h3")
+        .addClass("moveInBottom")
+        .css({ "animation-delay": "1s" });
+      $(".srtracker")
+        .addClass("moveInBottom")
+        .css({ "animation-delay": "1s" });
       // //class reset
       setTimeout(function () {
         $("#2-h2").removeClass("moveInBottom");
-        $(".srtracker").addClass("moveInBottom")
+        $(".srtracker").addClass("moveInBottom");
       }, 1300);
       setTimeout(function () {
         $(".srtracker").removeClass("moveInBottom");
@@ -200,10 +239,13 @@ function previousItem() {
   let $currentSlide = slide.eq(currentSlideNumber);
   // //element selectors
   let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber);
+
   //actions for every slide
   $currentSlide.removeClass("down-scroll").addClass("up-scroll");
   $currentHeadingPrimary.addClass("moveInTop");
+  $(".arrow").addClass("fadeIn");
   setTimeout(function () {
+    $(".arrow").removeClass("fadeIn");
     $currentHeadingPrimary.removeClass("moveInTop moveInBottom");
   }, 1300);
   switch (currentSlideNumber) {
@@ -217,10 +259,10 @@ function previousItem() {
     case 1:
       $("#1-h3").addClass("moveInTop");
       ///large icon animation would be here//
-      $('#icon-div').addClass('moveInTop');
+      $("#icon-div").addClass("moveInTop");
       //icons
       for (var i = 0; i < iconIds.length; i++) {
-        $(iconIds[i]).addClass('moveInTop');
+        $(iconIds[i]).addClass("moveInTop");
         $(iconIds[i]).css({
           "animation-delay": animationDelayTimesUp[i]
         });
@@ -228,8 +270,8 @@ function previousItem() {
       // //class reset
       setTimeout(function () {
         $("#1-h3").removeClass("moveInTop");
-        $('#icon-div').removeClass('moveInTop')
-        $('.icon').removeClass('moveInTop');
+        $("#icon-div").removeClass("moveInTop");
+        $(".icon").removeClass("moveInTop");
       }, 1300);
       break;
     case 2:

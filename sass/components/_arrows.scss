@@ -1,12 +1,14 @@
-.downarrow {
-width: 3rem;
-margin-left: auto;
-margin-right: auto;
-margin-top: 5rem;
-}
-.uparrow {
-width: 3rem;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 5rem;
+.arrow {
+  width: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__up {
+    margin-bottom: 5rem;
+  }
+
+  &__down {
+    margin-top: 5rem;
+  }
+  
 }

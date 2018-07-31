@@ -7,6 +7,12 @@
     opacity: 1;
     transform: translateX(0); } }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 @keyframes moveInRight {
   0% {
     opacity: 0;
@@ -46,6 +52,9 @@
   animation-duration: 1s;
   animation-delay: .3s;
   animation-fill-mode: both; }
+
+.fadeIn {
+  animation: fadeIn 1s 1.5s both; }
 
 *,
 *::after,
@@ -134,17 +143,14 @@ a:link {
   padding-left: 2rem;
   padding-right: 2rem; }
 
-.downarrow {
+.arrow {
   width: 3rem;
   margin-left: auto;
-  margin-right: auto;
-  margin-top: 5rem; }
-
-.uparrow {
-  width: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5rem; }
+  margin-right: auto; }
+  .arrow__up {
+    margin-bottom: 5rem; }
+  .arrow__down {
+    margin-top: 5rem; }
 
 .tech-icon {
   width: 90rem;
