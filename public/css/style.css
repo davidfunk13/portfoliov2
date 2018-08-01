@@ -221,6 +221,8 @@ a:link {
   .mobileh2marginpull {
     margin-top: 0rem;
     margin-bottom: -2.2rem; }
+  #wrapper-3 {
+    transform: translateY(5vh); }
   .arrow__up {
     margin-bottom: 2rem; }
     .arrow__up--1 {
