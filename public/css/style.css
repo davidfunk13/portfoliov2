@@ -287,9 +287,9 @@ a:link {
   .heading-tertiary {
     font-size: .7rem; }
   .arrow__up {
-    margin-bottom: 2rem; }
+    margin-bottom: 0rem; }
   .arrow__down {
-    margin-top: 2rem; }
+    margin-top: 0rem; }
   #asshole {
     transform: translateY(5vh); }
   #asshole2 {
