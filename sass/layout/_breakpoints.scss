@@ -29,7 +29,29 @@
   .contact-heading {
     font-size: 6rem;
   }
+  .mobileh2marginpull{
+    margin-top: 0rem;
+    margin-bottom: -2.2rem;
+  }
 
+.arrow{
+
+  &__up{
+
+    margin-bottom: 1rem;
+    &--1{
+      margin-bottom: 1rem;
+    }
+  }
+  &__down{
+margin-top: 1rem;
+
+    &--1{
+      margin-top: 1rem;
+    }
+  }
+
+}
 }
 @media only screen and (max-width: 520px) {
   .heading-primary{
