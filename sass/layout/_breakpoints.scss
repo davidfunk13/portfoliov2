@@ -156,13 +156,14 @@
 }
 @media only screen and (max-height: 320px){
   .heading-primary{
-    font-size:6rem
+    font-size:4rem
   }
   .icon {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    padding: 1rem;
   }
   #icon-div{
-    width: 90vw;
+    width: 70vw;
   }
   .heading-secondary{
     font-size: 1.2rem;
@@ -172,12 +173,22 @@
   }
   .arrow {
     &__up {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
   
     &__down {
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
     
   }
+  #asshole{
+    transform: translateY(5vh)
+  }
+  #asshole2{
+    transform: translateY(5vh)
+  }
+  #asshole3{
+    transform: translateY(5vh)
+  }
+  
 }

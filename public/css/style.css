@@ -269,19 +269,26 @@ a:link {
 
 @media only screen and (max-height: 320px) {
   .heading-primary {
-    font-size: 6rem; }
+    font-size: 4rem; }
   .icon {
-    font-size: 1.5rem; }
+    font-size: 2rem;
+    padding: 1rem; }
   #icon-div {
-    width: 90vw; }
+    width: 70vw; }
   .heading-secondary {
     font-size: 1.2rem; }
   .heading-tertiary {
     font-size: .7rem; }
   .arrow__up {
-    margin-bottom: 1rem; }
+    margin-bottom: 2rem; }
   .arrow__down {
-    margin-top: 1rem; } }
+    margin-top: 2rem; }
+  #asshole {
+    transform: translateY(5vh); }
+  #asshole2 {
+    transform: translateY(5vh); }
+  #asshole3 {
+    transform: translateY(5vh); } }
 
 .background {
   background-size: cover;
@@ -290,10 +297,10 @@ a:link {
   overflow: hidden;
   will-change: transform;
   backface-visibility: hidden;
-  height: 130vh;
+  height: 125vh;
   position: fixed;
   width: 100%;
-  transform: translateY(30vh);
+  transform: translateY(25vh);
   transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1); }
   .background:before {
     content: "";
@@ -307,9 +314,9 @@ a:link {
     background-color: rgba(0, 0, 0, 0.3); }
   .background:first-child {
     background-color: #20418e;
-    transform: translateY(-15vh); }
+    transform: translateY(-12.5vh); }
     .background:first-child .content-wrapper {
-      transform: translateY(15vh); }
+      transform: translateY(12.5vh); }
   .background:nth-child(2) {
     background-color: #272932; }
   .background:nth-child(3) {
@@ -337,19 +344,19 @@ a:link {
   transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1); }
 
 .background.down-scroll {
-  transform: translate3d(0, -130vh, 0); }
+  transform: translate3d(0, -125vh, 0); }
   .background.down-scroll .content-wrapper {
     transform: translateY(40vh); }
   .background.down-scroll + .background:not(.down-scroll) {
-    transform: translate3d(0, -15vh, 0); }
+    transform: translate3d(0, -12.5vh, 0); }
     .background.down-scroll + .background:not(.down-scroll) .content-wrapper {
-      transform: translateY(15vh); }
+      transform: translateY(12.5vh); }
 
 .background.up-scroll {
-  transform: translate3d(0, -15vh, 0); }
+  transform: translate3d(0, -12.5vh, 0); }
   .background.up-scroll .content-wrapper {
-    transform: translateY(15vh); }
+    transform: translateY(12.5vh); }
   .background.up-scroll + .background {
-    transform: translate3d(0, 30vh, 0); }
+    transform: translate3d(0, 25vh, 0); }
     .background.up-scroll + .background .content-wrapper {
-      transform: translateY(30vh); }
+      transform: translateY(25vh); }
