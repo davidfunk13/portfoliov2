@@ -7,11 +7,14 @@
     height: auto;
 }
 
-#srtracker_tooltip{
+.srtracker_tooltip{
     font-size: 5rem;
     display: none;
 }
 .tooltipimg{
     max-width: 100%;
     border: 1px solid black;
+}
+.qtip-content{
+    text-align: center;
 }

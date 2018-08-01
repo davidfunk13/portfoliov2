@@ -1,35 +1,3 @@
-// @media only screen
-//   and (min-width: 320px)
-//   and (max-width: 640px)
-//   {
-//     .heading-primary{
-//         margin-top: -5rem;
-//         font-size: 5rem;
-//     }
-//     .heading-secondary{
-//         // margin-top: -5rem;
-//         font-size: 1rem;
-//     }
-//     .text-box-border{
-//             border: .3rem solid white;
-//             margin-right: auto;
-//             margin-left: auto;
-//             padding-left: 2rem;
-//             padding-right: 2rem;
-//     }
-//     #icon-div{
-//         width: auto;
-//         margin-bottom: -1rem;
-//     }
-//     .icon{
-//         font-size: 2.1rem;
-//     }
-//     .heading-tertiary{
-//         font-size: 1rem;
-//     }
-
-// }
-
 @media only screen and (max-width: 900px) {
   #icon-div {
     width: auto;
@@ -55,6 +23,7 @@
     font-size: 1.5rem;
   }
   .heading-tertiary{
+    padding: 1rem;
     font-size: 1rem;
   }
   .contact-heading {

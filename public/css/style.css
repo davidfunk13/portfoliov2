@@ -170,6 +170,9 @@ a:link {
   padding: 2rem;
   border: 1px solid white; }
 
+.tooltiptext {
+  display: none; }
+
 .portfolio-items {
   display: flex;
   justify-content: space-evenly;
@@ -178,13 +181,16 @@ a:link {
   width: 100%;
   height: auto; }
 
-#srtracker_tooltip {
+.srtracker_tooltip {
   font-size: 5rem;
   display: none; }
 
 .tooltipimg {
   max-width: 100%;
   border: 1px solid black; }
+
+.qtip-content {
+  text-align: center; }
 
 @media only screen and (max-width: 900px) {
   #icon-div {
@@ -205,6 +211,7 @@ a:link {
   .heading-secondary {
     font-size: 1.5rem; }
   .heading-tertiary {
+    padding: 1rem;
     font-size: 1rem; }
   .contact-heading {
     font-size: 6rem; } }

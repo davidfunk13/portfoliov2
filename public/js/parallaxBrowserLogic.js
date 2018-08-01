@@ -1,99 +1,9 @@
-let ticking = false;
-let isFirefox = /Firefox/i.test(navigator.userAgent);
-let isIe =
-  /MSIE/i.test(navigator.userAgent) ||
-  /Trident.*rv\:11\./i.test(navigator.userAgent);
-let scrollSensitivitySetting = 100; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive)
-let slideDurationSetting = 2500; //Amount of time for which slide is "locked"
-let currentSlideNumber = 0;
-let totalSlideNumber = $(".background").length;
-let headingPrimary = $(".heading-primary");
-let headingSecondary = $(".heading-secondary");
-let headingTertiary = $(".heading-tertiary");
-let slide = $(".background");
-let arrowUp = $(".up");
-let arrowDown = $(".down");
-let iconIds = [
-  "#1-icon-css",
-  "#1-icon-express",
-  "#1-icon-git",
-  "#1-icon-heroku",
-  "#1-icon-html",
-  "#1-icon-illustrator",
-  "#1-icon-javascript",
-  "#1-icon-jquery",
-  "#1-icon-mongodb",
-  "#1-icon-nodejs",
-  "#1-icon-photoshop",
-  "#1-icon-react",
-  "#1-icon-sass",
-  "#1-icon-sequelize",
-  "#1-icon-bootstrap"
-];
-//15 classes
-let animationDelayTimesDown = [
-  ".1s",
-  ".2s",
-  ".3s",
-  ".3s",
-  ".3s",
-  ".3s",
-  ".3s",
-  ".2s",
-  ".1s",
-  ".1s",
-  ".2s",
-  ".3s",
-  ".3s",
-  ".2s",
-  ".1s"
-];
-let animationDelayTimesUp = [
-  ".3s",
-  ".25s",
-  ".2s",
-  ".15s",
-  ".1s",
-  ".15s",
-  ".2s",
-  ".25s",
-  ".3s",
-  ".3s",
-  ".2s",
-  ".1s",
-  ".1s",
-  ".2s",
-  ".3s"
-];
+//touch device?
 if (!$.mobile.support.touch) {
-  console.log("does not support touch");
   $(".arrow").hide();
 }
-if ($.mobile.support.touch) {
-  console.log("does support touch");
-}
 
-$(document).on("click", ".arrow__down", () => {
-  console.log("down");
-  if (ticking != true) {
-    ticking = true;
-    if (currentSlideNumber !== totalSlideNumber - 1) {
-      currentSlideNumber++;
-      nextItem();
-    }
-    slideDurationTimeout(slideDurationSetting);
-  }
-});
-$(document).on("click", ".arrow__up", () => {
-  if (ticking != true) {
-    ticking = true;
-    if (currentSlideNumber !== 0) {
-      currentSlideNumber--;
-      previousItem();
-    }
-    slideDurationTimeout(slideDurationSetting);
-  }
-});
+//slide functionality for mousewheel events
 function parallaxScroll(evt) {
   if (isFirefox) {
     delta = evt.detail * -120;
@@ -123,101 +33,84 @@ function parallaxScroll(evt) {
     }
   }
 }
-
+//locks slide to set duration. did this so animations have time to complete and reset.
 function slideDurationTimeout(slideDuration) {
-  setTimeout(function() {
+  setTimeout(function () {
     ticking = false;
   }, slideDuration);
 }
 
-let mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), {
-  passive: true
-});
 
-//add scroll event listener. this is how it will work on mobile.
-
-//tooltips
-$(".srtracker").qtip({
-  show: "click",
-  hide: "unfocus click",
-  content: {
-    text: $("#srtracker_tooltip").html()
-  },
-  style: {
-    height: "auto",
-    classes: "qtip-bootstrap qtip-shadow"
-  },
-  position: {
-    my: "bottom center",
-    at: "top center",
-    target: $(".srtracker")
-  }
-});
-
+//next slide. handles all animation utilitiy classes.
 function nextItem() {
   //slide selectors
   let $previousSlide = slide.eq(currentSlideNumber - 1);
-  // //element selectors
+  //specific element selectors
   let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber);
   let $previousHeadingPrimary = headingPrimary.eq(currentSlideNumber - 1);
-  //all slide actions
+  //actions that perform on every slide
   $previousSlide.removeClass("up-scroll").addClass("down-scroll");
   $currentHeadingPrimary.addClass("moveInBottom");
   $(".arrow").addClass("fadeIn");
-  //all slide class reset
-  setTimeout(function() {
+  //every slide class reset timeout
+  setTimeout(function () {
     $previousHeadingPrimary.removeClass("moveInTop");
     $currentHeadingPrimary.removeClass("moveInBottom moveInTop");
   }, 1300);
-  setTimeout(function() {
+  setTimeout(function () {
     $(".arrow").removeClass("fadeIn");
   }, 2000);
   switch (currentSlideNumber) {
     case 0:
       break;
     case 1:
-      //classs added
+      //slide specific classes
       $("#1-h3").addClass("moveInBottom");
       $("#icon-div").addClass("moveInBottom");
 
-      //icons
+      //slide specific icons
       for (var i = 0; i < iconIds.length; i++) {
         $(iconIds[i]).addClass("moveInBottom");
         $(iconIds[i]).css({
           "animation-delay": animationDelayTimesDown[i]
         });
       }
-      // //class reset
-      setTimeout(function() {
+      //slide specific class reset
+      setTimeout(function () {
         $("#1-h3").removeClass("moveInBottom");
         $("#icon-div").removeClass("moveInBottom");
         $(".icon").removeClass("moveInBottom");
       }, 1300);
       break;
     case 2:
+      //slide specific classes
       $("#2-h2").addClass("moveInBottom");
       $("#2-h3")
         .addClass("moveInBottom")
-        .css({ "animation-delay": "1s" });
+        .css({
+          "animation-delay": "1s"
+        });
       $(".srtracker")
         .addClass("moveInBottom")
-        .css({ "animation-delay": "1s" });
-      // //class reset
-      setTimeout(function() {
+        .css({
+          "animation-delay": "1s"
+        });
+      //slide specific class reset
+      setTimeout(function () {
         $("#2-h2").removeClass("moveInBottom");
         $(".srtracker").addClass("moveInBottom");
       }, 1300);
-      setTimeout(function() {
+      setTimeout(function () {
         $(".srtracker").removeClass("moveInBottom");
         $("#2-h3").removeClass("moveInBottom");
       }, 2000);
       break;
     case 3:
+      //slide specific classes
       $("#3-h2").addClass("moveInBottom");
       $("#3-h3").addClass("moveInBottom");
-      // //class reset
-      setTimeout(function() {
+      //slide specific class reset
+      setTimeout(function () {
         $("#3-h2").removeClass("moveInBottom");
         $("#3-h3").removeClass("moveInBottom");
       }, 1300);
@@ -229,56 +122,59 @@ function nextItem() {
 }
 
 function previousItem() {
-  // //slide selectors
+  //slide specific selectors
   let $currentSlide = slide.eq(currentSlideNumber);
-  // //element selectors
+  //element specific selectors
   let $currentHeadingPrimary = headingPrimary.eq(currentSlideNumber);
-
   //actions for every slide
   $currentSlide.removeClass("down-scroll").addClass("up-scroll");
   $currentHeadingPrimary.addClass("moveInTop");
   $(".arrow").addClass("fadeIn");
-  setTimeout(function() {
+  //class reset every slide on timeout
+  setTimeout(function () {
     $currentHeadingPrimary.removeClass("moveInTop moveInBottom");
   }, 1300);
-  setTimeout(function() {
+  setTimeout(function () {
     $(".arrow").removeClass("fadeIn");
   }, 2000);
+  //slide specific actions
   switch (currentSlideNumber) {
     case 0:
+      //slide specific actions
       $("#0-h2").addClass("moveInTop");
-      // //class reset
-      setTimeout(function() {
+      //slide specific reset
+      setTimeout(function () {
         $("#0-h2").removeClass("moveInTop");
       }, 1300);
       break;
     case 1:
+      //slide specific actions
       $("#1-h3").addClass("moveInTop");
-      ///large icon animation would be here//
       $("#icon-div").addClass("moveInTop");
-      //icons
+      //slide specific icon actions
       for (var i = 0; i < iconIds.length; i++) {
         $(iconIds[i]).addClass("moveInTop");
         $(iconIds[i]).css({
           "animation-delay": animationDelayTimesUp[i]
         });
       }
-      // //class reset
-      setTimeout(function() {
+      //slide specific class reset
+      setTimeout(function () {
         $("#1-h3").removeClass("moveInTop");
         $("#icon-div").removeClass("moveInTop");
         $(".icon").removeClass("moveInTop");
       }, 1300);
       break;
     case 2:
+      //slide specific actions
       $("#2-h2").addClass("moveInTop");
       $("#2-h3").addClass("moveInTop");
       $(".srtracker").addClass("moveInTop");
-      // //class reset
-      setTimeout(function() {
+      //slide specific class reset
+      setTimeout(function () {
         $("#2-h2").removeClass("moveInTop");
       }, 1300);
-      setTimeout(function() {
+      setTimeout(function () {
         $("#2-h3").removeClass("moveInTop");
         $(".srtracker").removeClass("moveInTop");
       }, 2000);
