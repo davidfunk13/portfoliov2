@@ -1,6 +1,8 @@
+
 iconIds.map((iconId, i) => {
     $('#icon-div').append("<div class='icon-tooltip'><p id='" + iconId.replace('#', '') + "--tooltiptext'" + "class='tooltiptext'>" + tooltipTexts[i] + "</p></div>")
 });
+
 iconIds.map(iconId => {
     return $(iconId).qtip({
         show: "click",
@@ -19,7 +21,6 @@ iconIds.map(iconId => {
         }
     })
 });
-
 //portfolio items
 $(".srtracker").qtip({
     show: "click",

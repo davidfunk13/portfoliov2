@@ -33,13 +33,13 @@ function parallaxScroll(evt) {
     }
   }
 }
+
 //locks slide to set duration. did this so animations have time to complete and reset.
 function slideDurationTimeout(slideDuration) {
   setTimeout(function () {
     ticking = false;
   }, slideDuration);
 }
-
 
 //next slide. handles all animation utilitiy classes.
 function nextItem() {
