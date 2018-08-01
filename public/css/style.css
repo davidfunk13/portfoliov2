@@ -108,6 +108,9 @@ a:link {
   text-align: center;
   text-transform: uppercase; }
 
+.mobileh2marginpull {
+  margin-top: 1.5rem; }
+
 .u-center-text {
   text-align: center; }
 
@@ -277,6 +280,9 @@ a:link {
 @media only screen and (max-height: 320px) {
   .heading-primary {
     font-size: 3.6rem; }
+  .mobileh2marginpull {
+    margin-top: 0rem;
+    margin-bottom: -2.2rem; }
   .icon {
     font-size: 2rem;
     padding: 1rem; }
