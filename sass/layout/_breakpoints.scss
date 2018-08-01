@@ -146,17 +146,20 @@
     }
   
     &__down {
+      &--0{
+      margin-top: 1rem;  
+      }
       margin-top: 0rem;
     }
     
   }
-  #asshole{
+  #wrapper-1{
     transform: translateY(5vh)
   }
-  #asshole2{
+  #wrapper-2{
     transform: translateY(5vh)
   }
-  #asshole3{
+  #wrapper-3{
     transform: translateY(5vh)
   }
   

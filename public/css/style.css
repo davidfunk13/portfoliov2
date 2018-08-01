@@ -290,11 +290,13 @@ a:link {
     margin-bottom: 1rem; }
   .arrow__down {
     margin-top: 0rem; }
-  #asshole {
+    .arrow__down--0 {
+      margin-top: 1rem; }
+  #wrapper-1 {
     transform: translateY(5vh); }
-  #asshole2 {
+  #wrapper-2 {
     transform: translateY(5vh); }
-  #asshole3 {
+  #wrapper-3 {
     transform: translateY(5vh); } }
 
 .background {
