@@ -65,19 +65,19 @@ function nextItem() {
       break;
     case 1:
       //slide specific classes
-      $("#1-h3").addClass("moveInBottom");
+      $("p").addClass("moveInBottom");
       $("#icon-div").addClass("moveInBottom");
 
       //slide specific icons
       for (var i = 0; i < iconIds.length; i++) {
         $(iconIds[i]).addClass("moveInBottom");
-        $(iconIds[i]).css({
-          "animation-delay": animationDelayTimesDown[i]
-        });
+        // $(iconIds[i]).css({
+        //   "animation-delay": animationDelayTimesDown[i]
+        // });
       }
       //slide specific class reset
       setTimeout(function () {
-        $("#1-h3").removeClass("moveInBottom");
+        $("p").removeClass("moveInBottom");
         $("#icon-div").removeClass("moveInBottom");
         $(".icon").removeClass("moveInBottom");
       }, 1300);
@@ -95,13 +95,20 @@ function nextItem() {
         .css({
           "animation-delay": "1s"
         });
+      $(".hazmat")
+        .addClass("moveInBottom")
+        .css({
+          "animation-delay": "1s"
+        });
       //slide specific class reset
       setTimeout(function () {
         $("#2-h2").removeClass("moveInBottom");
         $(".srtracker").addClass("moveInBottom");
+        $(".hazmat").addClass("moveInBottom");
       }, 1300);
       setTimeout(function () {
         $(".srtracker").removeClass("moveInBottom");
+        $(".hazmat").removeClass("moveInBottom");
         $("#2-h3").removeClass("moveInBottom");
       }, 2000);
       break;
@@ -149,18 +156,18 @@ function previousItem() {
       break;
     case 1:
       //slide specific actions
-      $("#1-h3").addClass("moveInTop");
+      $("p").addClass("moveInTop");
       $("#icon-div").addClass("moveInTop");
       //slide specific icon actions
       for (var i = 0; i < iconIds.length; i++) {
         $(iconIds[i]).addClass("moveInTop");
-        $(iconIds[i]).css({
-          "animation-delay": animationDelayTimesUp[i]
-        });
+        // $(iconIds[i]).css({
+        //   "animation-delay": animationDelayTimesUp[i]
+        // });
       }
       //slide specific class reset
       setTimeout(function () {
-        $("#1-h3").removeClass("moveInTop");
+        $("p").removeClass("moveInTop");
         $("#icon-div").removeClass("moveInTop");
         $(".icon").removeClass("moveInTop");
       }, 1300);
@@ -170,6 +177,7 @@ function previousItem() {
       $("#2-h2").addClass("moveInTop");
       $("#2-h3").addClass("moveInTop");
       $(".srtracker").addClass("moveInTop");
+      $(".hazmat").addClass("moveInTop");
       //slide specific class reset
       setTimeout(function () {
         $("#2-h2").removeClass("moveInTop");
@@ -177,6 +185,7 @@ function previousItem() {
       setTimeout(function () {
         $("#2-h3").removeClass("moveInTop");
         $(".srtracker").removeClass("moveInTop");
+        $(".hazmat").removeClass("moveInTop");
       }, 2000);
       break;
     case 3:

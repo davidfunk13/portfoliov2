@@ -26,7 +26,7 @@ $(".srtracker").qtip({
     show: "click",
     hide: "unfocus click",
     content: {
-        text: $(".srtracker_tooltip").html()
+        text: $(".srtracker__tooltip").html()
     },
     style: {
         height: "auto",
@@ -36,5 +36,21 @@ $(".srtracker").qtip({
         my: "bottom center",
         at: "top center",
         target: $(".srtracker")
+    }
+});
+$(".hazmat").qtip({
+    show: "click",
+    hide: "unfocus click",
+    content: {
+        text: $(".hazmat__tooltip").html()
+    },
+    style: {
+        height: "auto",
+        classes: "qtip-bootstrap qtip-shadow"
+    },
+    position: {
+        my: "bottom center",
+        at: "top center",
+        target: $(".hazmat")
     }
 });

@@ -3,6 +3,8 @@ let isFirefox = /Firefox/i.test(navigator.userAgent);
 let isIe =
   /MSIE/i.test(navigator.userAgent) ||
   /Trident.*rv\:11\./i.test(navigator.userAgent);
+
+console.log(isIe)
 let scrollSensitivitySetting = 100; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive)
 let slideDurationSetting = 2500; //Amount of time for which slide is "locked"
 let currentSlideNumber = 0;
