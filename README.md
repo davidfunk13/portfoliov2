@@ -1,1 +1,3 @@
-# portfoliov2
+# Dave Funk
+
+This is my personal portfolio where I will post projects I create.
