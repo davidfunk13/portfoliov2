@@ -54,3 +54,19 @@ $(".hazmat").qtip({
         target: $(".hazmat")
     }
 });
+$(".reddit").qtip({
+    show: "click",
+    hide: "unfocus click",
+    content: {
+        text: $(".reddit__tooltip").html()
+    },
+    style: {
+        height: "auto",
+        classes: "qtip-bootstrap qtip-shadow"
+    },
+    position: {
+        my: "bottom center",
+        at: "top center",
+        target: $(".reddit")
+    }
+});

@@ -100,15 +100,22 @@ function nextItem() {
         .css({
           "animation-delay": "1s"
         });
+      $(".reddit")
+        .addClass("moveInBottom")
+        .css({
+          "animation-delay": "1s"
+        });
       //slide specific class reset
       setTimeout(function () {
         $("#2-h2").removeClass("moveInBottom");
         $(".srtracker").addClass("moveInBottom");
         $(".hazmat").addClass("moveInBottom");
+        $(".reddit").addClass("moveInBottom");
       }, 1300);
       setTimeout(function () {
         $(".srtracker").removeClass("moveInBottom");
         $(".hazmat").removeClass("moveInBottom");
+        $(".reddit").removeClass("moveInBottom");
         $("#2-h3").removeClass("moveInBottom");
       }, 2000);
       break;
