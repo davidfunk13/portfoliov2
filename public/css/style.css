@@ -195,6 +195,17 @@ a:link {
     text-align: center;
     text-transform: uppercase; }
 
+.reddit__tooltip {
+  font-size: 5rem;
+  display: none; }
+  .reddit__tooltip--tooltiptext {
+    font-family: Montserrat;
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+    padding-bottom: .5rem;
+    text-align: center;
+    text-transform: uppercase; }
+
 .tooltipimg {
   max-width: 100%;
   border: 1px solid black; }
