@@ -1,7 +1,7 @@
 //touch device?
-if (!$.mobile.support.touch) {
-  $(".arrow").hide();
-}
+// if (!$.mobile.support.touch) {
+//   $(".arrow").hide();
+// }
 
 //slide functionality for mousewheel events
 function parallaxScroll(evt) {
