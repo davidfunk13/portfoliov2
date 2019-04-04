@@ -185,6 +185,7 @@ function previousItem() {
       $("#2-h3").addClass("moveInTop");
       $(".srtracker").addClass("moveInTop");
       $(".hazmat").addClass("moveInTop");
+      $(".reddit").addClass("moveInTop");
       //slide specific class reset
       setTimeout(function () {
         $("#2-h2").removeClass("moveInTop");
@@ -193,6 +194,7 @@ function previousItem() {
         $("#2-h3").removeClass("moveInTop");
         $(".srtracker").removeClass("moveInTop");
         $(".hazmat").removeClass("moveInTop");
+        $(".reddit").removeClass("moveInTop");
       }, 2000);
       break;
     case 3:
