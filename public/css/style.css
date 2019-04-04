@@ -184,6 +184,10 @@ a:link {
   width: 100%;
   height: auto; }
 
+.portfolio-box {
+  margin-left: 1rem;
+  margin-right: 1rem; }
+
 .srtracker__tooltip {
   font-size: 5rem;
   display: none; }
@@ -194,6 +198,21 @@ a:link {
     padding-bottom: .5rem;
     text-align: center;
     text-transform: uppercase; }
+
+.srtracker-hooks__tooltip {
+  font-size: 1rem;
+  display: none; }
+  .srtracker-hooks__tooltip--tooltiptext {
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    letter-spacing: .1rem;
+    text-align: center;
+    text-transform: uppercase; }
+  .srtracker-hooks__tooltip--underConstruction {
+    text-decoration: underline; }
+
+.srtracker-hooks {
+  margin-bottom: 1rem; }
 
 .reddit__tooltip {
   font-size: 5rem;

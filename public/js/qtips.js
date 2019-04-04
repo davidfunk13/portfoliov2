@@ -38,6 +38,24 @@ $(".srtracker").qtip({
         target: $(".srtracker")
     }
 });
+
+$(".srtracker-hooks").qtip({
+    show: "click",
+    hide: "unfocus click",
+    content: {
+        text: $(".srtracker-hooks__tooltip").html()
+    },
+    style: {
+        height: "auto",
+        classes: "qtip-bootstrap qtip-shadow"
+    },
+    position: {
+        my: "top center",
+        at: "top center",
+        target: $(".srtracker-hooks")
+    }
+});
+
 $(".hazmat").qtip({
     show: "click",
     hide: "unfocus click",
