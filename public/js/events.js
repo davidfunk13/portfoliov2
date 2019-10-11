@@ -15,6 +15,7 @@ $(document).on("click", ".arrow__down", () => {
         slideDurationTimeout(slideDurationSetting);
     }
 });
+
 $(document).on("click", ".arrow__up", () => {
     event.preventDefault()
     if (ticking != true) {

@@ -6,10 +6,12 @@
     width: 100%;
     height: auto;
 }
+
 .portfolio-box{
     margin-left: 1rem;
     margin-right: 1rem;
 }
+
 .srtracker__tooltip{
     font-size: 5rem;
     display: none;
@@ -22,6 +24,7 @@
         text-transform: uppercase;
     }
 }
+
 .srtracker-hooks__tooltip{
     font-size: 1rem;
     display: none;
@@ -32,6 +35,23 @@
         text-align: center;
         text-transform: uppercase;
     }
+    &--underConstruction{
+        text-decoration: underline;
+    }
+}
+
+.vanilla-reddit__tooltip{
+    font-size: 1rem;
+    display: none;
+    
+    &--tooltiptext {
+        font-family: Montserrat;
+        font-size: 1.25rem;
+        letter-spacing: .1rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
     &--underConstruction{
         text-decoration: underline;
     }

@@ -105,6 +105,11 @@ function nextItem() {
         .css({
           "animation-delay": "1s"
         });
+      $(".vanilla-reddit")
+        .addClass("moveInBottom")
+        .css({
+          "animation-delay": "1s"
+        });
       $(".reddit")
         .addClass("moveInBottom")
         .css({
@@ -116,12 +121,14 @@ function nextItem() {
         $(".srtracker-hooks").addClass("moveInBottom");
         $(".srtracker").addClass("moveInBottom");
         $(".hazmat").addClass("moveInBottom");
+        $(".vanilla-reddit").addClass("moveInBottom");
         $(".reddit").addClass("moveInBottom");
       }, 1300);
       setTimeout(function () {
         $(".srtracker-hooks").removeClass("moveInBottom");
         $(".srtracker").removeClass("moveInBottom");
         $(".hazmat").removeClass("moveInBottom");
+        $(".vanilla-reddit").removeClass("moveInBottom");
         $(".reddit").removeClass("moveInBottom");
         $("#2-h3").removeClass("moveInBottom");
       }, 2000);
@@ -193,6 +200,7 @@ function previousItem() {
       $(".srtracker-hooks").addClass("moveInTop");
       $(".srtracker").addClass("moveInTop");
       $(".hazmat").addClass("moveInTop");
+      $(".vanilla-reddit").addClass("moveInTop");
       $(".reddit").addClass("moveInTop");
       //slide specific class reset
       setTimeout(function () {
@@ -203,6 +211,7 @@ function previousItem() {
         $(".srtracker-hooks").removeClass("moveInTop");
         $(".srtracker").removeClass("moveInTop");
         $(".hazmat").removeClass("moveInTop");
+        $(".vanilla-redit").removeClass("moveInTop");
         $(".reddit").removeClass("moveInTop");
       }, 2000);
       break;

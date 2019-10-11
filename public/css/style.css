@@ -211,8 +211,20 @@ a:link {
   .srtracker-hooks__tooltip--underConstruction {
     text-decoration: underline; }
 
+.vanilla-reddit__tooltip {
+  font-size: 1rem;
+  display: none; }
+  .vanilla-reddit__tooltip--tooltiptext {
+    font-family: Montserrat;
+    font-size: 1.25rem;
+    letter-spacing: .1rem;
+    text-align: center;
+    text-transform: uppercase; }
+  .vanilla-reddit__tooltip--underConstruction {
+    text-decoration: underline; }
+
 .srtracker-hooks {
-  margin-bottom: 1rem; }
+  margin-bottom: 1.5rem; }
 
 .reddit__tooltip {
   font-size: 5rem;

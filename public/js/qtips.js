@@ -56,6 +56,23 @@ $(".srtracker-hooks").qtip({
     }
 });
 
+$(".vanilla-reddit").qtip({
+    show: "click",
+    hide: "unfocus click",
+    content: {
+        text: $(".vanilla-reddit__tooltip").html()
+    },
+    style: {
+        height: "auto",
+        classes: "qtip-bootstrap qtip-shadow"
+    },
+    position: {
+        my: "top center",
+        at: "top center",
+        target: $(".vanilla-reddit")
+    }
+});
+
 $(".hazmat").qtip({
     show: "click",
     hide: "unfocus click",
