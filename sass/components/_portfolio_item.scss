@@ -39,6 +39,24 @@
         text-decoration: underline;
     }
 }
+.responsive-design-sample{
+    margin-bottom: .5rem;
+}
+
+.responsive-design-sample__tooltip{
+    font-size: 1rem;
+    display: none;
+    &--tooltiptext {
+        font-family: Montserrat;
+        font-size: 1.25rem;
+        letter-spacing: .1rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &--underConstruction{
+        text-decoration: underline;
+    }
+}
 
 .vanilla-reddit__tooltip{
     font-size: 1rem;
@@ -58,7 +76,7 @@
 }
 
 .srtracker-hooks{
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
 }
 
 .reddit__tooltip{

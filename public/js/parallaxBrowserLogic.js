@@ -95,6 +95,11 @@ function nextItem() {
         .css({
           "animation-delay": "1s"
         });
+      $(".responsive-design-sample")
+        .addClass("moveInBottom")
+        .css({
+          "animation-delay": "1s"
+        });
       $(".srtracker-hooks")
         .addClass("moveInBottom")
         .css({
@@ -118,6 +123,7 @@ function nextItem() {
       //slide specific class reset
       setTimeout(function () {
         $("#2-h2").removeClass("moveInBottom");
+        $(".responsive-design-sample").addClass("moveInBottom");
         $(".srtracker-hooks").addClass("moveInBottom");
         $(".srtracker").addClass("moveInBottom");
         $(".hazmat").addClass("moveInBottom");
@@ -125,6 +131,7 @@ function nextItem() {
         $(".reddit").addClass("moveInBottom");
       }, 1300);
       setTimeout(function () {
+        $(".responsive-design-sample").removeClass("moveInBottom");
         $(".srtracker-hooks").removeClass("moveInBottom");
         $(".srtracker").removeClass("moveInBottom");
         $(".hazmat").removeClass("moveInBottom");
@@ -197,6 +204,7 @@ function previousItem() {
       //slide specific actions
       $("#2-h2").addClass("moveInTop");
       $("#2-h3").addClass("moveInTop");
+      $(".responsive-design-sample").addClass("moveInTop");
       $(".srtracker-hooks").addClass("moveInTop");
       $(".srtracker").addClass("moveInTop");
       $(".hazmat").addClass("moveInTop");
@@ -208,6 +216,7 @@ function previousItem() {
       }, 1300);
       setTimeout(function () {
         $("#2-h3").removeClass("moveInTop");
+        $(".responsive-design-sample").removeClass("moveInTop");
         $(".srtracker-hooks").removeClass("moveInTop");
         $(".srtracker").removeClass("moveInTop");
         $(".hazmat").removeClass("moveInTop");
